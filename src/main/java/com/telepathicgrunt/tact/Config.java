@@ -14,11 +14,20 @@ public class Config {
                     """)
             .define("friendlyCompassBlocking", true);
 
+    private static final ForgeConfigSpec.BooleanValue REPLACEABLE_SMALL_PLANTS = BUILDER
+            .comment("""
+                    Whether to make Bone Worms, Underweed, Tree Star, Fiddlehead, Curly Fern, and Pewen Pines be
+                    replaceable by another block when right clicking them while holding a block in your hands.
+                    """)
+            .define("replaceableSmallPlants", true);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean friendlyCompassBlocking;
+    public static boolean replaceableSmallPlants;
 
     static void onLoad(final ModConfigEvent event) {
         friendlyCompassBlocking = FRIENDLY_COMPASS_BLOCKING.get();
+        replaceableSmallPlants = REPLACEABLE_SMALL_PLANTS.get();
     }
 }

@@ -3,7 +3,9 @@
   "package": "com.telepathicgrunt.tact.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "tact.refmap.json",
-  "mixins": [],
+  "mixins": [
+    "BlockStateBaseAccessor"
+  ],
   "client": [],
   "injectors": {
     "defaultRequire": 1

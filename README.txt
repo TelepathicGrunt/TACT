@@ -6,6 +6,8 @@ https://www.curseforge.com/minecraft/mc-mods/alexs-caves
 
 Adjustments done:
 
+- Silence the laughing that happens when attempting to use a biome locating compass for Alex's Caves biomes. The compass will still be blocked.
+
 - Made Bone Worms, Underweed, Tree Star, Fiddlehead, Curly Fern, and Pewen Pines be replaceable by blocks in your hand just like how vanilla grass and fern can be replaced by player block placing.
 
 - Added all Alex's Cave biomes to `minecraft:is_overworld` tag for compatibility with other mods and datapacks.

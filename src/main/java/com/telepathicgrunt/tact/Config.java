@@ -10,7 +10,6 @@ public class Config {
     private static final ForgeConfigSpec.BooleanValue FRIENDLY_COMPASS_BLOCKING = BUILDER
             .comment("""
                     Whether to disable the laughing that plays when Alex's Caves blocks a compass from locating cave biomes.
-                    Instead, a friendly action bar message will show instead saying to use Alex's Cave's book instead.
                     """)
             .define("friendlyCompassBlocking", true);
 

@@ -17,6 +17,8 @@ plugins {
     id "com.modrinth.minotaur" version "2.+"
 }
 
+apply plugin: 'org.spongepowered.mixin'
+
 version = mod_version
 group = mod_group_id
 
@@ -38,7 +40,6 @@ minecraft {
             arg "-mixin.config=" + project.getProperty('mod_id') + ".mixins.json"
             mods {
                 tact {
-                    source sourceSets.api
                     source sourceSets.main
                 }
             }
@@ -51,12 +52,21 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven {
+        url = 'https://www.cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+
+    implementation fg.deobf("curse.maven:alexs-caves-924854:4806837")
+    implementation fg.deobf("curse.maven:citadel-331936:4786380")
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -75,7 +85,7 @@ tasks.named('processResources', ProcessResources).configure {
 }
 
 mixin {
-    add sourceSets.main, "${modid}.refmap.json"
+    add sourceSets.main, "${mod_id}.refmap.json"
 }
 
 tasks.named('jar', Jar).configure {
@@ -153,13 +163,13 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     mainFile.addGameVersion("1.19.2")
     mainFile.changelogType = "markdown"
     mainFile.releaseType = "release"
-    mainFile.displayName = "The Bumblezone v${project.mod_version} (${project.mc_version} MC)"
+    mainFile.displayName = "The Bumblezone v${project.mod_version} (${project.minecraft_version} MC)"
 }
 
 modrinth {
     token = System.getenv("MODRINTH")
     versionName = "The Bumblezone"
-    versionNumber = project.version
+    versionNumber = project.minecraft_version
     projectId = ""
     uploadFile = jar
     changelog = changelogText
@@ -169,8 +179,8 @@ modrinth {
 }
 
 task checkForRefmap() {
-    if (file("./build/libs/the_bumblezone_forge-${project.mod_version}+${project.mc_version}.jar").exists()) {
-        assert zipTree("./build/libs/the_bumblezone_forge-${project.mod_version}+${project.mc_version}.jar")
+    if (file("./build/libs/the_bumblezone_forge-${project.mod_version}+${project.minecraft_version}.jar").exists()) {
+        assert zipTree("./build/libs/the_bumblezone_forge-${project.mod_version}+${project.minecraft_version}.jar")
                 .matching { include "the_bumblezone.refmap.json" }.getSingleFile() != null
     }
 }

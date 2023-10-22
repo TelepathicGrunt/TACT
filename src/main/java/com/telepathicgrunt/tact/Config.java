@@ -7,11 +7,11 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    private static final ForgeConfigSpec.BooleanValue FRIENDLY_COMPASS_BLOCKING = BUILDER
+    private static final ForgeConfigSpec.BooleanValue ADJUST_STRUCTURE_NBT_FILES = BUILDER
             .comment("""
-                    Whether to disable the laughing that plays when Alex's Caves blocks a compass from locating cave biomes.
+                    Whether to replace Alex's Caves structure NBT files with ones that fit a bit better with terrain.
                     """)
-            .define("friendlyCompassBlocking", true);
+            .define("adjustStructureNbtFiles", true);
 
     private static final ForgeConfigSpec.BooleanValue REPLACEABLE_SMALL_PLANTS = BUILDER
             .comment("""
@@ -22,11 +22,11 @@ public class Config {
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
-    public static boolean friendlyCompassBlocking;
+    public static boolean adjustStructureNbtFiles;
     public static boolean replaceableSmallPlants;
 
     static void onLoad(final ModConfigEvent event) {
-        friendlyCompassBlocking = FRIENDLY_COMPASS_BLOCKING.get();
+        adjustStructureNbtFiles = ADJUST_STRUCTURE_NBT_FILES.get();
         replaceableSmallPlants = REPLACEABLE_SMALL_PLANTS.get();
     }
 }

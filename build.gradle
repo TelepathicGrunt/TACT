@@ -165,7 +165,7 @@ publishing {
 String changelogText = file("CHANGELOG.md").getText('UTF-8')
 task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
     apiToken = "$System.env.CURSEFORGEKEY"
-    int projectId = 0
+    int projectId = 926263
 
     def mainFile = upload(projectId, jar)
     mainFile.changelog = changelogText
@@ -173,6 +173,8 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     mainFile.changelogType = "markdown"
     mainFile.releaseType = "release"
     mainFile.displayName = "The Bumblezone v${project.mod_version} (${project.minecraft_version} MC)"
+
+    mainFile.addRequirement("alexs-caves")
 }
 
 modrinth {

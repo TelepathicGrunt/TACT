@@ -6,6 +6,8 @@ https://www.curseforge.com/minecraft/mc-mods/alexs-caves
 
 Adjustments done:
 
+- Added config option to change the stun duration of Primitive Club.
+
 - Made Underweed, Tree Star, Fiddlehead, and Curly Fern be replaceable by blocks in your hand just like how vanilla grass and fern can be replaced by player block placing.
 
 - Added all Alex's Cave biomes to `minecraft:is_overworld` tag for compatibility with other mods and datapacks.

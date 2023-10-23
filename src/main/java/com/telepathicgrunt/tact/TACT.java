@@ -1,16 +1,24 @@
 package com.telepathicgrunt.tact;
 
+import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
+import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
 import com.mojang.logging.LogUtils;
 import com.telepathicgrunt.tact.mixin.BlockStateBaseAccessor;
+import com.telepathicgrunt.tact.mixin.MobEffectInstanceAccessor;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddPackFindersEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -19,6 +27,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.resource.PathPackResources;
+import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 
 import java.util.Optional;
@@ -36,6 +45,7 @@ public class TACT {
         modEventBus.addListener(this::setupBuiltInDataPack);
 
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+        forgeBus.addListener(this::stunEffectAdjustment);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -79,6 +89,26 @@ public class TACT {
         }
         catch(Exception ex) {
             throw new RuntimeException(ex);
+        }
+    }
+
+    private void stunEffectAdjustment(final MobEffectEvent.Added event) {
+        Entity effectSource = event.getEffectSource();
+        if (!(effectSource instanceof LivingEntity) || effectSource.level().isClientSide()) {
+            return;
+        }
+
+        MobEffectInstance currentEffect = event.getEffectInstance();
+        if (currentEffect.getEffect() == ACEffectRegistry.STUNNED.get()) {
+
+            LivingEntity livingEntity = (LivingEntity) effectSource;
+            ItemStack usedItem = livingEntity.getItemInHand(livingEntity.getUsedItemHand());
+
+            if (usedItem.is(ACItemRegistry.PRIMITIVE_CLUB.get())) {
+                ((MobEffectInstanceAccessor)currentEffect).setDuration(
+                    Config.primitiveClubBaseStunTime + livingEntity.getRandom().nextInt(Config.primitiveClubRandomExtraStunTime)
+                );
+            }
         }
     }
 }

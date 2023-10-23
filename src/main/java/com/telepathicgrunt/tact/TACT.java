@@ -2,20 +2,15 @@ package com.telepathicgrunt.tact;
 
 import com.mojang.logging.LogUtils;
 import com.telepathicgrunt.tact.mixin.BlockStateBaseAccessor;
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddPackFindersEvent;
-import net.minecraftforge.event.PlayLevelSoundEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -26,7 +21,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.resource.PathPackResources;
 import org.slf4j.Logger;
 
-import java.io.IOException;
 import java.util.Optional;
 
 @Mod(TACT.MODID)
@@ -49,12 +43,10 @@ public class TACT {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             if (Config.replaceableSmallPlants) {
-                makeReplaceable(new ResourceLocation(ALEXSCAVES_MODID, "bone_worms"));
                 makeReplaceable(new ResourceLocation(ALEXSCAVES_MODID, "underweed"));
                 makeReplaceable(new ResourceLocation(ALEXSCAVES_MODID, "tree_star"));
                 makeReplaceable(new ResourceLocation(ALEXSCAVES_MODID, "fiddlehead"));
                 makeReplaceable(new ResourceLocation(ALEXSCAVES_MODID, "curly_fern"));
-                makeReplaceable(new ResourceLocation(ALEXSCAVES_MODID, "pewen_pines"));
             }
         });
     }
@@ -69,13 +61,13 @@ public class TACT {
 
     private void setupBuiltInDataPack(final AddPackFindersEvent event) {
         try {
-            if (Config.adjustStructureNbtFiles && event.getPackType() == PackType.SERVER_DATA) {
+            if (Config.applyTagAdjustments && event.getPackType() == PackType.SERVER_DATA) {
                 var resourcePath =  ModList.get().getModFileById(MODID).getFile()
-                        .findResource("datapacks/adjusted_structure_nbt_files");
+                        .findResource("datapacks/apply_tag_adjustments");
 
                 var pack = Pack.readMetaAndCreate(
-                        "builtin/adjusted_structure_nbt_files",
-                        Component.literal("TACT - Adjusted Structure NBT Files"),
+                        "builtin/apply_tag_adjustments",
+                        Component.literal("TACT - Adjusted Tags"),
                         false,
                         (path) -> new PathPackResources(path, false, resourcePath),
                         PackType.SERVER_DATA,

@@ -42,17 +42,28 @@ public class Config {
                     """)
             .defineInRange("primitiveClubRandomExtraStunTime", 150, 0, 1000000);
 
+    private static final ForgeConfigSpec.BooleanValue RESTORE_END_STORY = BUILDER
+            .comment("""
+                    ----------------------------------
+                    
+                     Whether to revert the End Story back to its original form when beating Minecraft.
+                     Alex's Caves replaces this story with their own. This config puts it back to normal if enabled.
+                    """)
+            .define("restoreEndStory", false);
+
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
     public static boolean applyTagAdjustments;
     public static boolean replaceableSmallPlants;
     public static int primitiveClubBaseStunTime;
     public static int primitiveClubRandomExtraStunTime;
+    public static boolean restoreEndStory;
 
     static void onLoad(final ModConfigEvent event) {
         applyTagAdjustments = APPLY_TAG_ADJUSTMENTS.get();
         replaceableSmallPlants = REPLACEABLE_SMALL_PLANTS.get();
         primitiveClubBaseStunTime = PRIMITIVE_CLUB_BASE_STUN_TIME.get();
         primitiveClubRandomExtraStunTime = PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get();
+        restoreEndStory = RESTORE_END_STORY.get();
     }
 }

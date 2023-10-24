@@ -7,3 +7,6 @@ Moved this mod's own tag adjustments into an internal datapack. Tag adjustments 
 
 #### Structures:
 Removed internal NBT file datapack as Alex's Caves updated to include the files themselves.
+
+#### Misc:
+Adjusted jar name to include minecraft version for clarity for what the mod is for.

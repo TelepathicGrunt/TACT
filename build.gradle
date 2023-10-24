@@ -19,7 +19,7 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
-version = mod_version
+version = "${mod_version}+${minecraft_version}"
 group = mod_group_id
 
 base {
@@ -169,30 +169,18 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
 
     def mainFile = upload(projectId, jar)
     mainFile.changelog = changelogText
-    mainFile.addGameVersion("1.19.2")
+    mainFile.addGameVersion("1.20.1")
     mainFile.changelogType = "markdown"
     mainFile.releaseType = "release"
-    mainFile.displayName = "The Bumblezone v${project.mod_version} (${project.minecraft_version} MC)"
+    mainFile.displayName = "TACT v${project.mod_version} (${project.minecraft_version} MC)"
 
     mainFile.addRequirement("alexs-caves")
 }
 
-modrinth {
-    token = System.getenv("MODRINTH")
-    versionName = "The Bumblezone"
-    versionNumber = project.minecraft_version
-    projectId = ""
-    uploadFile = jar
-    changelog = changelogText
-    versionType = "RELEASE"
-    gameVersions = ["1.19.2"]
-    loaders = ["forge"]
-}
-
 task checkForRefmap() {
-    if (file("./build/libs/the_bumblezone_forge-${project.mod_version}+${project.minecraft_version}.jar").exists()) {
-        assert zipTree("./build/libs/the_bumblezone_forge-${project.mod_version}+${project.minecraft_version}.jar")
-                .matching { include "the_bumblezone.refmap.json" }.getSingleFile() != null
+    if (file("./build/libs/tact-${project.mod_version}+${project.minecraft_version}.jar").exists()) {
+        assert zipTree("./build/libs/tact-${project.mod_version}+${project.minecraft_version}.jar")
+                .matching { include "tact.refmap.json" }.getSingleFile() != null
     }
 }
 
@@ -200,5 +188,4 @@ task buildAndRelease{}
 tasks.checkForRefmap.mustRunAfter tasks.build
 tasks.publish.mustRunAfter tasks.checkForRefmap
 tasks.publishCurseForge.mustRunAfter tasks.publish
-tasks.modrinth.mustRunAfter tasks.publish
-tasks.buildAndRelease.dependsOn(tasks.build, tasks.publish, tasks.publishCurseForge, tasks.modrinth)
+tasks.buildAndRelease.dependsOn(tasks.build, tasks.publish, tasks.publishCurseForge)

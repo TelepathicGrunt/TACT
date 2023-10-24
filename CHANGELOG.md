@@ -1,5 +1,8 @@
 ### **(V.1.0.1 Changes) (1.20.1 Minecraft)**
 
+#### NOTICE:
+ Requires Alex's Caves v1.0.5 or newer now.
+
 #### End Story:
 Added config to revert End Story back to normal when beating Minecraft. This undoes the story replacement that Alex's Caves does.
  This config is set to false by default but if set to true, the story is put back to normal.

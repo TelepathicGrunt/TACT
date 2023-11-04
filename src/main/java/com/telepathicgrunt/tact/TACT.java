@@ -47,6 +47,7 @@ public class TACT {
         modEventBus.addListener(Config::onLoad);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setupBuiltInDataPack);
+        modEventBus.addListener(EntityAttributeModifications::AttributeModifications);
 
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.addListener(this::stunEffectAdjustment);

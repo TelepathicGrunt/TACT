@@ -5,8 +5,11 @@
   "refmap": "tact.refmap.json",
   "mixins": [
     "BlockStateBaseAccessor",
+    "FerrouslimeEntityMixin",
     "LivingEntityAccessor",
-    "MobEffectInstanceAccessor"
+    "MagnetronEntityMixin",
+    "MobEffectInstanceAccessor",
+    "VallumraptorEntityMixin"
   ],
   "client": [],
   "injectors": {

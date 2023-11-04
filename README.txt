@@ -8,6 +8,8 @@ Adjustments done:
 
 - Added config option to change the stun duration of Primitive Club.
 
+- Added config option to disable the End Story replacement that Alex's Caves replaced when beating Ender Dragon.
+
 - Made Underweed, Tree Star, Fiddlehead, and Curly Fern be replaceable by blocks in your hand just like how vanilla grass and fern can be replaced by player block placing.
 
 - Added all Alex's Cave biomes to `minecraft:is_overworld` tag for compatibility with other mods and datapacks.

@@ -2,3 +2,6 @@
 
 #### Entities:
 Added config options to set every Alex's Caves entity's health and attack damage.
+
+#### Tags:
+Added Alex's Caves saplings to the `minecraft:saplings` item tag.

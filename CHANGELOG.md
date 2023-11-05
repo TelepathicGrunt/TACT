@@ -1,3 +1,9 @@
+### **(V.1.0.3 Changes) (1.20.1 Minecraft)**
+
+#### Blocks:
+Added Quarry block into `minecraft:mineable/pickaxe` tag so it is mineable. Requires stone or better Pickaxe.
+
+
 ### **(V.1.0.2 Changes) (1.20.1 Minecraft)**
 
 #### Entities:

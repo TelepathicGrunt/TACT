@@ -1,14 +1,23 @@
 package com.telepathicgrunt.tact;
 
+import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry;
 import com.telepathicgrunt.tact.mixin.BlockStateBaseAccessor;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import java.util.Optional;
 
 public class BlockModifications {
+
+    static void setupEarlyModifications() {
+        ACBlockRegistry.PEWEN_LOG_PROPERTIES.instrument(NoteBlockInstrument.BASS);
+        ACBlockRegistry.PEWEN_PLANKS_PROPERTIES.instrument(NoteBlockInstrument.BASS);
+        ACBlockRegistry.THORNWOOD_LOG_PROPERTIES.instrument(NoteBlockInstrument.BASS);
+        ACBlockRegistry.THORNWOOD_PLANKS_PROPERTIES.instrument(NoteBlockInstrument.BASS);
+    }
 
     static void setupModifications(final FMLCommonSetupEvent event) {
         if (Config.replaceableSmallPlants) {

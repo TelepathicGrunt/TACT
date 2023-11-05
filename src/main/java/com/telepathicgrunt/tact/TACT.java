@@ -1,15 +1,7 @@
 package com.telepathicgrunt.tact;
 
-import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
-import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
 import com.mojang.logging.LogUtils;
-import com.telepathicgrunt.tact.mixin.LivingEntityAccessor;
-import com.telepathicgrunt.tact.mixin.MobEffectInstanceAccessor;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -34,6 +26,8 @@ public class TACT {
 
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.addListener(ItemModifications::stunEffectAdjustment);
+
+        BlockModifications.setupEarlyModifications();
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

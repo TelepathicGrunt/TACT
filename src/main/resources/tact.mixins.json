@@ -5,6 +5,7 @@
   "refmap": "tact.refmap.json",
   "mixins": [
     "BlockStateBaseAccessor",
+    "DarknessArmorItemMixin",
     "FerrouslimeEntityMixin",
     "LivingEntityAccessor",
     "MagnetronEntityMixin",

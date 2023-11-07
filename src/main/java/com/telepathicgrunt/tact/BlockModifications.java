@@ -12,13 +12,6 @@ import java.util.Optional;
 
 public class BlockModifications {
 
-    static void setupEarlyModifications() {
-        ACBlockRegistry.PEWEN_LOG_PROPERTIES.instrument(NoteBlockInstrument.BASS);
-        ACBlockRegistry.PEWEN_PLANKS_PROPERTIES.instrument(NoteBlockInstrument.BASS);
-        ACBlockRegistry.THORNWOOD_LOG_PROPERTIES.instrument(NoteBlockInstrument.BASS);
-        ACBlockRegistry.THORNWOOD_PLANKS_PROPERTIES.instrument(NoteBlockInstrument.BASS);
-    }
-
     static void setupModifications(final FMLCommonSetupEvent event) {
         if (Config.replaceableSmallPlants) {
             makeReplaceable(new ResourceLocation(TACT.ALEXS_CAVES_MODID, "underweed"));

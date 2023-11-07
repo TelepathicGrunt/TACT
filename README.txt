@@ -8,6 +8,8 @@ Adjustments done:
 
 - Added config option to change the stun duration of Primitive Club.
 
+- Added config options to change flight time and recharge time of Cloak of Darkness.
+
 - Added config options to change health and attack damage for nearly all Alex's Caves mobs.
 
 - Added Bass note block instrument to Pewen and Thornwood blocks so Every Compat mod can create variants of those wood types.

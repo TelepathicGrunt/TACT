@@ -26,6 +26,7 @@ public class TACT {
 
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.addListener(ItemModifications::stunEffectAdjustment);
+        forgeBus.addListener(CompendiumUnlock::playerLoggedIn);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

@@ -12,6 +12,7 @@ public class Config {
     private static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_BASE_STUN_TIME;
     private static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME;
     private static final ForgeConfigSpec.BooleanValue RESTORE_END_STORY;
+    private static final ForgeConfigSpec.BooleanValue UNLOCK_ALL_COMPENDIUM_INFO;
 
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_MAX_HEALTH;
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_ATTACK_DAMAGE;
@@ -115,6 +116,14 @@ public class Config {
                      Alex's Caves replaces this story with their own. This config puts it back to normal if enabled.
                     """)
                 .define("restoreEndStory", false);
+
+        UNLOCK_ALL_COMPENDIUM_INFO = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     If enabled, this config makes the Compendium have all biomes and their info unlocked immediately on log-in.
+                    """)
+                .define("unlockAllCompendiumInfo", false);
 
 
         configBuilder.push("Mob Attack/Health Options");
@@ -295,6 +304,7 @@ public class Config {
     public static int primitiveClubBaseStunTime;
     public static int primitiveClubRandomExtraStunTime;
     public static boolean restoreEndStory;
+    public static boolean unlockAllCompendiumInfo;
 
     public static double boundroidMaxHealth;
     public static double boundroidAttackDamage;
@@ -358,7 +368,8 @@ public class Config {
         primitiveClubBaseStunTime = PRIMITIVE_CLUB_BASE_STUN_TIME.get();
         primitiveClubRandomExtraStunTime = PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get();
         restoreEndStory = RESTORE_END_STORY.get();
-        
+        unlockAllCompendiumInfo = UNLOCK_ALL_COMPENDIUM_INFO.get();
+
         boundroidMaxHealth = BOUNDROID_MAX_HEALTH.get();
         boundroidAttackDamage = BOUNDROID_ATTACK_DAMAGE.get();
         boundroidWrinchMaxHealth = BOUNDROID_WINCH_MAX_HEALTH.get();

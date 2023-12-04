@@ -10,7 +10,9 @@ Adjustments done:
 
 - Added config options to change health and attack damage for nearly all Alex's Caves mobs.
 
-- Added config option to disable the End Story replacement that Alex's Caves replaced when beating Ender Dragon.
+- Added config option to disable the End Story replacement that Alex's Caves replaced when beating Ender Dragon. (Not disabled by default)
+
+- Added config option to unlock all pages in the Cave Compendium book on log in. (Config is off by default)
 
 - Made Underweed, Tree Star, Fiddlehead, and Curly Fern be replaceable by blocks in your hand just like how vanilla grass and fern can be replaced by player block placing.
 

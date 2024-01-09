@@ -19,16 +19,15 @@ public class ItemModifications {
 
         MobEffectInstance currentEffect = event.getEffectInstance();
         if (currentEffect.getEffect() == ACEffectRegistry.STUNNED.get() &&
-                affectedEntity.getLastAttacker() != null &&
-                ((LivingEntityAccessor)affectedEntity).getLastHurtByPlayerTime() == 100)
+            affectedEntity.getLastAttacker() != null &&
+            ((LivingEntityAccessor)affectedEntity).getLastHurtByPlayerTime() == 100)
         {
-
             LivingEntity attacker = affectedEntity.getLastAttacker();
             ItemStack usedItem = attacker.getItemInHand(attacker.getUsedItemHand());
 
             if (usedItem.is(ACItemRegistry.PRIMITIVE_CLUB.get())) {
                 ((MobEffectInstanceAccessor)currentEffect).setDuration(
-                        Config.primitiveClubBaseStunTime + affectedEntity.getRandom().nextInt(Config.primitiveClubRandomExtraStunTime)
+                    Config.primitiveClubBaseStunTime + affectedEntity.getRandom().nextInt(Config.primitiveClubRandomExtraStunTime)
                 );
             }
         }

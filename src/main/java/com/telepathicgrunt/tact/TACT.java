@@ -2,6 +2,7 @@ package com.telepathicgrunt.tact;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +26,7 @@ public class TACT {
         modEventBus.addListener(EntityAttributeModifications::AttributeModifications);
 
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-        forgeBus.addListener(ItemModifications::stunEffectAdjustment);
+        forgeBus.addListener(EventPriority.LOWEST, ItemModifications::stunEffectAdjustment);
         forgeBus.addListener(CompendiumUnlock::playerLoggedIn);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);

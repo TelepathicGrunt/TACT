@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 public class TACT {
     public static final String MODID = "tact";
     public static final String ALEXS_CAVES_MODID = "alexscaves";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public TACT() {
 

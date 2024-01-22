@@ -13,6 +13,7 @@ public class Config {
     private static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME;
     private static final ForgeConfigSpec.BooleanValue RESTORE_END_STORY;
     private static final ForgeConfigSpec.BooleanValue UNLOCK_ALL_COMPENDIUM_INFO;
+    private static final ForgeConfigSpec.ConfigValue<String> DREADBOW_ARROW_RAIN_OVERRIDES;
 
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_MAX_HEALTH;
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_ATTACK_DAMAGE;
@@ -124,6 +125,20 @@ public class Config {
                      If enabled, this config makes the Compendium have all biomes and their info unlocked immediately on log-in.
                     """)
                 .define("unlockAllCompendiumInfo", false);
+
+        DREADBOW_ARROW_RAIN_OVERRIDES = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Allows setting overrides for how many arrows to spawn with Dreadbow's rain-like attack.
+                     Format is the arrow item registry name. Then an equal sign =. And ends with the arrow amount.
+                     Separate multiple entries with a comma , and whitespace will be ignored.
+                     Example: "alexscaves:seeking_arrow=5, alexscaves:burrowing_arrow=100"
+                     
+                     Otherwise, will default to Alex's Caves original code for determining arrow amount for
+                     the attack which is 30 arrows for dark colored arrows and 5 arrows for all other arrows.
+                    """)
+                .define("dreadbowArrowRainOverrides", "");
 
 
         configBuilder.push("Mob Attack/Health Options");
@@ -369,6 +384,7 @@ public class Config {
         primitiveClubRandomExtraStunTime = PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get();
         restoreEndStory = RESTORE_END_STORY.get();
         unlockAllCompendiumInfo = UNLOCK_ALL_COMPENDIUM_INFO.get();
+        DreadbowRainAttackModification.setDreadbowOverrides(DREADBOW_ARROW_RAIN_OVERRIDES.get());
 
         boundroidMaxHealth = BOUNDROID_MAX_HEALTH.get();
         boundroidAttackDamage = BOUNDROID_ATTACK_DAMAGE.get();

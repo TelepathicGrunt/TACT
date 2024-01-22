@@ -70,6 +70,10 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${project.mixin_extras_version}"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:${project.mixin_extras_version}")) {
+        jarJar.ranged(it, "[${project.mixin_extras_version},)")
+    }
 
     implementation fg.deobf("curse.maven:alexs-caves-924854:4952948")
     implementation fg.deobf("curse.maven:citadel-331936:4848887")

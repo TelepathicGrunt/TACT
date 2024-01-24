@@ -2,7 +2,6 @@ package com.telepathicgrunt.tact;
 
 import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry;
 import com.github.alexmodguy.alexscaves.server.potion.ACEffectRegistry;
-import com.telepathicgrunt.tact.mixin.LivingEntityAccessor;
 import com.telepathicgrunt.tact.mixin.MobEffectInstanceAccessor;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;

@@ -8,6 +8,8 @@ Adjustments done:
 
 - Added config option to change the stun duration of Primitive Club.
 
+- Added config option to adjust how many arrows Dreadbow will spawn per arrow type.
+
 - Added config options to change health and attack damage for nearly all Alex's Caves mobs.
 
 - Added config option to disable the End Story replacement that Alex's Caves replaced when beating Ender Dragon. (Not disabled by default)

@@ -101,6 +101,15 @@ public class EntityAttributeModifications {
 
         event.add(ACEntityRegistry.WATCHER.get(), Attributes.MAX_HEALTH, Config.watcherMaxHealth);
         event.add(ACEntityRegistry.WATCHER.get(), Attributes.ATTACK_DAMAGE, Config.watcherAttackDamage);
+
+        event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.MAX_HEALTH, Config.luxtructosaurusMaxHealth);
+        event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.ATTACK_DAMAGE, Config.luxtructosaurusAttackDamage);
+
+        event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.MAX_HEALTH, Config.atlatitanMaxHealth);
+        event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.ATTACK_DAMAGE, Config.atlatitanAttackDamage);
+
+        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.MAX_HEALTH, Config.tremorzillaMaxHealth);
+        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.ATTACK_DAMAGE, Config.tremorzillaAttackDamage);
     }
 
     private static void loadTACTConfigsEarly() {

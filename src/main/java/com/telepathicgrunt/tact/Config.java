@@ -70,6 +70,12 @@ public class Config {
     private static final ForgeConfigSpec.DoubleValue VESPER_ATTACK_DAMAGE;
     private static final ForgeConfigSpec.DoubleValue WATCHER_MAX_HEALTH;
     private static final ForgeConfigSpec.DoubleValue WATCHER_ATTACK_DAMAGE;
+    private static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_MAX_HEALTH;
+    private static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ATTACK_DAMAGE;
+    private static final ForgeConfigSpec.DoubleValue ATLATITAN_MAX_HEALTH;
+    private static final ForgeConfigSpec.DoubleValue ATLATITAN_ATTACK_DAMAGE;
+    private static final ForgeConfigSpec.DoubleValue TREMORZILLA_MAX_HEALTH;
+    private static final ForgeConfigSpec.DoubleValue TREMORZILLA_ATTACK_DAMAGE;
 
     static {
         ForgeConfigSpec.Builder configBuilder = new ForgeConfigSpec.Builder();
@@ -308,6 +314,25 @@ public class Config {
         WATCHER_ATTACK_DAMAGE = configBuilder
                 .defineInRange("watcherAttackDamage", 4.0d, 1, 1000000);
 
+        LUXTRUCTOSAURUS_MAX_HEALTH = configBuilder
+                .defineInRange("luxtructosaurusMaxHealth", 600d, 1, 1000000);
+
+        LUXTRUCTOSAURUS_ATTACK_DAMAGE = configBuilder
+                .defineInRange("luxtructosaurusAttackDamage", 12.0d, 1, 1000000);
+
+        ATLATITAN_MAX_HEALTH = configBuilder
+                .defineInRange("atlatitanMaxHealth", 400d, 1, 1000000);
+
+        ATLATITAN_ATTACK_DAMAGE = configBuilder
+                .defineInRange("atlatitanAttackDamage", 8.0d, 1, 1000000);
+
+        TREMORZILLA_MAX_HEALTH = configBuilder
+                .defineInRange("tremorzillaMaxHealth", 500d, 1, 1000000);
+
+        TREMORZILLA_ATTACK_DAMAGE = configBuilder
+                .defineInRange("tremorzillaAttackDamage", 30.0d, 1, 1000000);
+
+
         configBuilder.pop();
 
 
@@ -376,6 +401,12 @@ public class Config {
     public static double vesperAttackDamage;
     public static double watcherMaxHealth;
     public static double watcherAttackDamage;
+    public static double luxtructosaurusMaxHealth;
+    public static double luxtructosaurusAttackDamage;
+    public static double atlatitanMaxHealth;
+    public static double atlatitanAttackDamage;
+    public static double tremorzillaMaxHealth;
+    public static double tremorzillaAttackDamage;
 
     static void onLoad(final ModConfigEvent event) {
         applyTagAdjustments = APPLY_TAG_ADJUSTMENTS.get();
@@ -441,5 +472,11 @@ public class Config {
         vesperAttackDamage = VESPER_ATTACK_DAMAGE.get();
         watcherMaxHealth = WATCHER_MAX_HEALTH.get();
         watcherAttackDamage = WATCHER_ATTACK_DAMAGE.get();
+        luxtructosaurusMaxHealth = LUXTRUCTOSAURUS_MAX_HEALTH.get();
+        luxtructosaurusAttackDamage = LUXTRUCTOSAURUS_ATTACK_DAMAGE.get();
+        atlatitanMaxHealth = ATLATITAN_MAX_HEALTH.get();
+        atlatitanAttackDamage = ATLATITAN_ATTACK_DAMAGE.get();
+        tremorzillaMaxHealth = TREMORZILLA_MAX_HEALTH.get();
+        tremorzillaAttackDamage = TREMORZILLA_ATTACK_DAMAGE.get();
     }
 }

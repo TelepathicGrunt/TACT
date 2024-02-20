@@ -7,7 +7,6 @@
     "BlockStateBaseAccessor",
     "DreadbowItemMixin",
     "FerrouslimeEntityMixin",
-    "LivingEntityAccessor",
     "MagnetronEntityMixin",
     "MobEffectInstanceAccessor",
     "VallumraptorEntityMixin"

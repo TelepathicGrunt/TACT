@@ -14,6 +14,8 @@ public class Config {
     private static final ForgeConfigSpec.BooleanValue RESTORE_END_STORY;
     private static final ForgeConfigSpec.BooleanValue UNLOCK_ALL_COMPENDIUM_INFO;
     private static final ForgeConfigSpec.ConfigValue<String> DREADBOW_ARROW_RAIN_OVERRIDES;
+    private static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED;
+    private static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_USAGE_SPEED;
 
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_MAX_HEALTH;
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_ATTACK_DAMAGE;
@@ -146,6 +148,23 @@ public class Config {
                     """)
                 .define("dreadbowArrowRainOverrides", "");
 
+        SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How quickly the flight meter will recharge for Subterranodon.
+                     Putting 2 will recharge twice as fast. Putting 0.5 will halve the recharge rate.
+                    """)
+                .defineInRange("subterranodonFlightMeterRechargeSpeed", 1D, 0, 1000);
+
+        SUBTERRANODON_FLIGHT_METER_USAGE_SPEED = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How quickly the flight meter will be depleted when flying with Subterranodon.
+                     Putting 2 will deplete the meter twice as fast. Putting 0.5 will slow the meter's usage rate.
+                    """)
+                .defineInRange("subterranodonFlightMeterUsageSpeed", 1D, 0, 1000);
 
         configBuilder.push("Mob Attack/Health Options");
 
@@ -345,6 +364,8 @@ public class Config {
     public static int primitiveClubRandomExtraStunTime;
     public static boolean restoreEndStory;
     public static boolean unlockAllCompendiumInfo;
+    public static double subterranodonFlightMeterRechargeSpeed;
+    public static double subterranodonFlightMeterUsageSpeed;
 
     public static double boundroidMaxHealth;
     public static double boundroidAttackDamage;
@@ -415,6 +436,8 @@ public class Config {
         primitiveClubRandomExtraStunTime = PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get();
         restoreEndStory = RESTORE_END_STORY.get();
         unlockAllCompendiumInfo = UNLOCK_ALL_COMPENDIUM_INFO.get();
+        subterranodonFlightMeterRechargeSpeed = SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED.get();
+        subterranodonFlightMeterUsageSpeed = SUBTERRANODON_FLIGHT_METER_USAGE_SPEED.get();
         DreadbowRainAttackModification.setDreadbowOverrides(DREADBOW_ARROW_RAIN_OVERRIDES.get());
 
         boundroidMaxHealth = BOUNDROID_MAX_HEALTH.get();

@@ -9,6 +9,7 @@
     "FerrouslimeEntityMixin",
     "MagnetronEntityMixin",
     "MobEffectInstanceAccessor",
+    "SubterranodonEntityMixin",
     "VallumraptorEntityMixin"
   ],
   "client": [],

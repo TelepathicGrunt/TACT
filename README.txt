@@ -12,6 +12,8 @@ Adjustments done:
 
 - Added config options to change health and attack damage for nearly all Alex's Caves mobs.
 
+- Added configs to control the recharge and depletion rate of Subterranodon's flight meter.
+
 - Added config option to disable the End Story replacement that Alex's Caves replaced when beating Ender Dragon. (Not disabled by default)
 
 - Added config option to unlock all pages in the Cave Compendium book on log in. (Config is off by default)

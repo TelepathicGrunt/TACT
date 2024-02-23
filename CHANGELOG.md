@@ -1,13 +1,6 @@
-### **(V.1.1.1 Changes) (1.20.1 Minecraft)**
+### **(V.1.1.2 Changes) (1.20.1 Minecraft)**
 
-#### Entities:
-Added configs to control the recharge and depletion rate of Subterranodon's flight meter.
+#### Biomes:
+Prevent any geodes using the vanilla GeodeFeature class from spawning in certain Alex's Caves biomes since geodes are not always generation safe.
 
-
-### **(V.1.1.0 Changes) (1.20.1 Minecraft)**
-
-#### Misc:
-Updated to 1.1.0 Alex's Caves mod.
-
-#### Entities:
-Added health and attack config options for Luxtructosaurus, Atlatitan, and Tremorzilla
+Added internal datapack to remove Spelunkery's wall mushroom from certain Alex's Caves biomes since their wall mushroom isn't genertaion safe: https://github.com/AstralOrdana/Spelunkery/issues/190

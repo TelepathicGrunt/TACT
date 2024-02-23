@@ -8,6 +8,7 @@ public class Config {
     static final ForgeConfigSpec SPEC;
 
     private static final ForgeConfigSpec.BooleanValue APPLY_TAG_ADJUSTMENTS;
+    private static final ForgeConfigSpec.BooleanValue APPLY_SPELUNKERY_COMPAT_ADJUSTMENTS;
     private static final ForgeConfigSpec.BooleanValue REPLACEABLE_SMALL_PLANTS;
     private static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_BASE_STUN_TIME;
     private static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME;
@@ -89,6 +90,14 @@ public class Config {
                      Whether to activate an internal datapack to add Alex's Caves biomes and blocks to certain tags for better mod compat.
                     """)
                 .define("applyTagAdjustments", true);
+
+        APPLY_SPELUNKERY_COMPAT_ADJUSTMENTS = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Whether to activate an internal datapack to remove Spelunkery mod's wall mushrooms from Alex's Caves's Primordial Cave biome due to the mushrooms not having safe generation.
+                    """)
+                .define("applySpelunkeryCompatAdjustments", true);
 
         REPLACEABLE_SMALL_PLANTS = configBuilder
                 .comment("""
@@ -359,6 +368,7 @@ public class Config {
     }
 
     public static boolean applyTagAdjustments;
+    public static boolean applySpelunkeryCompatAdjustments;
     public static boolean replaceableSmallPlants;
     public static int primitiveClubBaseStunTime;
     public static int primitiveClubRandomExtraStunTime;
@@ -431,6 +441,7 @@ public class Config {
 
     static void onLoad(final ModConfigEvent event) {
         applyTagAdjustments = APPLY_TAG_ADJUSTMENTS.get();
+        applySpelunkeryCompatAdjustments = APPLY_SPELUNKERY_COMPAT_ADJUSTMENTS.get();
         replaceableSmallPlants = REPLACEABLE_SMALL_PLANTS.get();
         primitiveClubBaseStunTime = PRIMITIVE_CLUB_BASE_STUN_TIME.get();
         primitiveClubRandomExtraStunTime = PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get();

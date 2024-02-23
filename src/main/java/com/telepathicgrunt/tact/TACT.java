@@ -1,6 +1,11 @@
 package com.telepathicgrunt.tact;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +21,8 @@ public class TACT {
     public static final String MODID = "tact";
     public static final String ALEXS_CAVES_MODID = "alexscaves";
     public static final Logger LOGGER = LogUtils.getLogger();
+
+    public static TagKey<Biome> MANUALLY_CARVED = TagKey.create(Registries.BIOME, new ResourceLocation(MODID, "manually_carved"));
 
     public TACT() {
 

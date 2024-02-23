@@ -1,0 +1,14 @@
+{
+  "type": "forge:remove_features",
+  "biomes": [
+    "alexscaves:abyssal_chasm",
+    "alexscaves:forlorn_hollows",
+    "alexscaves:primordial_caves"
+  ],
+  "features": [
+    "spelunkery:conk_fungus",
+    "spelunkery:mushgloom",
+    "spelunkery:phosphor_fungus"
+  ],
+  "step": "underground_ores"
+}

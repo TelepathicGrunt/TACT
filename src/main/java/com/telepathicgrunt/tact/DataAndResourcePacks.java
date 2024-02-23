@@ -7,6 +7,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoader;
 import net.minecraftforge.fml.config.ConfigTracker;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.loading.FMLPaths;
@@ -36,6 +37,21 @@ public class DataAndResourcePacks {
                 event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
             }
 
+            if (Config.applySpelunkeryCompatAdjustments && event.getPackType() == PackType.SERVER_DATA && ModList.get().isLoaded("spelunkery")) {
+                var resourcePath =  ModList.get().getModFileById(TACT.MODID).getFile()
+                        .findResource("datapacks/spelunkery_compat_adjustments");
+
+                var pack = Pack.readMetaAndCreate(
+                        "tact/spelunkery_compat_adjustments",
+                        Component.literal("TACT - Spelunkery Compat Adjustments"),
+                        true,
+                        (path) -> new PathPackResources(path, false, resourcePath),
+                        PackType.SERVER_DATA,
+                        Pack.Position.BOTTOM,
+                        PackSource.DEFAULT);
+
+                event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
+            }
 
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
                 loadTACTConfigsEarly();

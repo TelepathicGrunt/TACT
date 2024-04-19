@@ -18,6 +18,9 @@ public class Config {
     private static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED;
     private static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_USAGE_SPEED;
 
+    private static final ForgeConfigSpec.DoubleValue RAYGUN_NORMAL_DAMAGE;
+    private static final ForgeConfigSpec.DoubleValue RAYGUN_GAMMA_DAMAGE;
+
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_MAX_HEALTH;
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_ATTACK_DAMAGE;
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_WINCH_MAX_HEALTH;
@@ -174,6 +177,26 @@ public class Config {
                      Putting 2 will deplete the meter twice as fast. Putting 0.5 will slow the meter's usage rate.
                     """)
                 .defineInRange("subterranodonFlightMeterUsageSpeed", 1D, 0, 1000);
+
+        configBuilder.push("Raygun Options");
+
+        RAYGUN_NORMAL_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Rate of damage for Raygun normally.
+                    """)
+                .defineInRange("raygunNormalDamage", 1.5D, 0, 1000);
+
+        RAYGUN_GAMMA_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Rate of damage for Raygun when gamma enchanted.
+                    """)
+                .defineInRange("raygunGammaDamage", 2.0D, 0, 1000);
+
+        configBuilder.pop();
 
         configBuilder.push("Mob Attack/Health Options");
 
@@ -377,6 +400,9 @@ public class Config {
     public static double subterranodonFlightMeterRechargeSpeed;
     public static double subterranodonFlightMeterUsageSpeed;
 
+    public static float raygunNormalDamage;
+    public static float raygunGammaDamage;
+
     public static double boundroidMaxHealth;
     public static double boundroidAttackDamage;
     public static double boundroidWrinchMaxHealth;
@@ -450,6 +476,9 @@ public class Config {
         subterranodonFlightMeterRechargeSpeed = SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED.get();
         subterranodonFlightMeterUsageSpeed = SUBTERRANODON_FLIGHT_METER_USAGE_SPEED.get();
         DreadbowRainAttackModification.setDreadbowOverrides(DREADBOW_ARROW_RAIN_OVERRIDES.get());
+
+        raygunNormalDamage = RAYGUN_NORMAL_DAMAGE.get().floatValue();
+        raygunGammaDamage = RAYGUN_GAMMA_DAMAGE.get().floatValue();
 
         boundroidMaxHealth = BOUNDROID_MAX_HEALTH.get();
         boundroidAttackDamage = BOUNDROID_ATTACK_DAMAGE.get();

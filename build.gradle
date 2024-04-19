@@ -75,8 +75,8 @@ dependencies {
         jarJar.ranged(it, "[${project.mixin_extras_version},)")
     }
 
-    implementation fg.deobf("curse.maven:alexs-caves-924854:5121949")
-    implementation fg.deobf("curse.maven:citadel-331936:5075402")
+    implementation fg.deobf("curse.maven:alexs-caves-924854:5162617")
+    implementation fg.deobf("curse.maven:citadel-331936:5143956")
 
     //runtimeOnly fg.deobf("com.telepathicgrunt:CommandStructures-Forge:4.1.0+1.20.1")
     //runtimeOnly fg.deobf("com.telepathicgrunt:StructureVoidToggle-Forge:4.2.6+1.20.1")

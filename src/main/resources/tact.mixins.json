@@ -10,6 +10,7 @@
     "GeodeFeatureMixin",
     "MagnetronEntityMixin",
     "MobEffectInstanceAccessor",
+    "RaygunItemMixin",
     "SubterranodonEntityMixin",
     "VallumraptorEntityMixin"
   ],

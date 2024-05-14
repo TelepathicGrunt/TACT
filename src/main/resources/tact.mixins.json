@@ -12,6 +12,7 @@
     "MobEffectInstanceAccessor",
     "RaygunItemMixin",
     "SubterranodonEntityMixin",
+    "TremorsaurusEntityMixin",
     "VallumraptorEntityMixin"
   ],
   "client": [],

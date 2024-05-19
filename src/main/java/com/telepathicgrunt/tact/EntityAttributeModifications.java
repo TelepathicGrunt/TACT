@@ -18,98 +18,98 @@ public class EntityAttributeModifications {
     public static void AttributeModifications(EntityAttributeModificationEvent event) {
         loadTACTConfigsEarly();
 
-        event.add(ACEntityRegistry.BOUNDROID.get(), Attributes.MAX_HEALTH, Config.boundroidMaxHealth);
-        event.add(ACEntityRegistry.BOUNDROID.get(), Attributes.ATTACK_DAMAGE, Config.boundroidAttackDamage);
+        event.add(ACEntityRegistry.BOUNDROID.get(), Attributes.MAX_HEALTH, Config.BOUNDROID_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.BOUNDROID.get(), Attributes.ATTACK_DAMAGE, Config.BOUNDROID_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.BOUNDROID_WINCH.get(), Attributes.MAX_HEALTH, Config.boundroidWrinchMaxHealth);
+        event.add(ACEntityRegistry.BOUNDROID_WINCH.get(), Attributes.MAX_HEALTH, Config.BOUNDROID_WINCH_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.CORRODENT.get(), Attributes.MAX_HEALTH, Config.corrodentMaxHealth);
-        event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ATTACK_DAMAGE, Config.corrodentAttackDamage);
+        event.add(ACEntityRegistry.CORRODENT.get(), Attributes.MAX_HEALTH, Config.CORRODENT_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ATTACK_DAMAGE, Config.CORRODENT_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.DEEP_ONE.get(), Attributes.MAX_HEALTH, Config.deepOneMaxHealth);
-        event.add(ACEntityRegistry.DEEP_ONE.get(), Attributes.ATTACK_DAMAGE, Config.deepOneAttackDamage);
+        event.add(ACEntityRegistry.DEEP_ONE.get(), Attributes.MAX_HEALTH, Config.DEEP_ONE_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.DEEP_ONE.get(), Attributes.ATTACK_DAMAGE, Config.DEEP_ONE_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.DEEP_ONE_KNIGHT.get(), Attributes.MAX_HEALTH, Config.deepOneKnightMaxHealth);
-        event.add(ACEntityRegistry.DEEP_ONE_KNIGHT.get(), Attributes.ATTACK_DAMAGE, Config.deepOneKnightAttackDamage);
+        event.add(ACEntityRegistry.DEEP_ONE_KNIGHT.get(), Attributes.MAX_HEALTH, Config.DEEP_ONE_KNIGHT_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.DEEP_ONE_KNIGHT.get(), Attributes.ATTACK_DAMAGE, Config.DEEP_ONE_KNIGHT_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.DEEP_ONE_MAGE.get(), Attributes.MAX_HEALTH, Config.deepOneMageMaxHealth);
-        event.add(ACEntityRegistry.DEEP_ONE_MAGE.get(), Attributes.ATTACK_DAMAGE, Config.deepOneMageAttackDamage);
+        event.add(ACEntityRegistry.DEEP_ONE_MAGE.get(), Attributes.MAX_HEALTH, Config.DEEP_ONE_MAGE_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.DEEP_ONE_MAGE.get(), Attributes.ATTACK_DAMAGE, Config.DEEP_ONE_MAGE_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.FERROUSLIME.get(), Attributes.MAX_HEALTH, Config.ferrouslimeMaxHealth);
-        event.add(ACEntityRegistry.FERROUSLIME.get(), Attributes.ATTACK_DAMAGE, Config.ferrouslimeAttackDamage);
+        event.add(ACEntityRegistry.FERROUSLIME.get(), Attributes.MAX_HEALTH, Config.FERROUSLIME_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.FERROUSLIME.get(), Attributes.ATTACK_DAMAGE, Config.FERROUSLIME_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.FORSAKEN.get(), Attributes.MAX_HEALTH, Config.forsakenMaxHealth);
-        event.add(ACEntityRegistry.FORSAKEN.get(), Attributes.ATTACK_DAMAGE, Config.forsakenAttackDamage);
+        event.add(ACEntityRegistry.FORSAKEN.get(), Attributes.MAX_HEALTH, Config.FORSAKEN_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.FORSAKEN.get(), Attributes.ATTACK_DAMAGE, Config.FORSAKEN_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.GAMMAROACH.get(), Attributes.MAX_HEALTH, Config.gammaroachMaxHealth);
-        event.add(ACEntityRegistry.GAMMAROACH.get(), Attributes.ATTACK_DAMAGE, Config.gammaroachAttackDamage);
+        event.add(ACEntityRegistry.GAMMAROACH.get(), Attributes.MAX_HEALTH, Config.GAMMAROACH_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.GAMMAROACH.get(), Attributes.ATTACK_DAMAGE, Config.GAMMAROACH_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.GLOOMOTH.get(), Attributes.MAX_HEALTH, Config.gloomothMaxHealth);
+        event.add(ACEntityRegistry.GLOOMOTH.get(), Attributes.MAX_HEALTH, Config.GLOOMOTH_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.GOSSAMER_WORM.get(), Attributes.MAX_HEALTH, Config.gossamerWormMaxHealth);
+        event.add(ACEntityRegistry.GOSSAMER_WORM.get(), Attributes.MAX_HEALTH, Config.GOSSAMER_WORM_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.GROTTOCERATOPS.get(), Attributes.MAX_HEALTH, Config.grottoceratopsMaxHealth);
-        event.add(ACEntityRegistry.GROTTOCERATOPS.get(), Attributes.ATTACK_DAMAGE, Config.grottoceratopsAttackDamage);
+        event.add(ACEntityRegistry.GROTTOCERATOPS.get(), Attributes.MAX_HEALTH, Config.GROTTOCERATOPS_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.GROTTOCERATOPS.get(), Attributes.ATTACK_DAMAGE, Config.GROTTOCERATOPS_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.MAX_HEALTH, Config.hullbreakerMaxHealth);
-        event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.ATTACK_DAMAGE, Config.hullbreakerAttackDamage);
+        event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.MAX_HEALTH, Config.HULLBREAKER_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.ATTACK_DAMAGE, Config.HULLBREAKER_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.LANTERNFISH.get(), Attributes.MAX_HEALTH, Config.lanternfishMaxHealth);
+        event.add(ACEntityRegistry.LANTERNFISH.get(), Attributes.MAX_HEALTH, Config.LANTERNFISH_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.MAGNETRON.get(), Attributes.MAX_HEALTH, Config.magnetronMaxHealth);
-        event.add(ACEntityRegistry.MAGNETRON.get(), Attributes.ATTACK_DAMAGE, Config.magnetronAttackDamage);
+        event.add(ACEntityRegistry.MAGNETRON.get(), Attributes.MAX_HEALTH, Config.MAGNETRON_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.MAGNETRON.get(), Attributes.ATTACK_DAMAGE, Config.MAGNETRON_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.MINE_GUARDIAN.get(), Attributes.MAX_HEALTH, Config.mineGuardianMaxHealth);
-        event.add(ACEntityRegistry.MINE_GUARDIAN.get(), Attributes.ATTACK_DAMAGE, Config.mineGuardianAttackDamage);
+        event.add(ACEntityRegistry.MINE_GUARDIAN.get(), Attributes.MAX_HEALTH, Config.MINE_GUARDIAN_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.MINE_GUARDIAN.get(), Attributes.ATTACK_DAMAGE, Config.MINE_GUARDIAN_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.NOTOR.get(), Attributes.MAX_HEALTH, Config.notorMaxHealth);
+        event.add(ACEntityRegistry.NOTOR.get(), Attributes.MAX_HEALTH, Config.NOTOR_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.NUCLEEPER.get(), Attributes.MAX_HEALTH, Config.nucleeperMaxHealth);
+        event.add(ACEntityRegistry.NUCLEEPER.get(), Attributes.MAX_HEALTH, Config.NUCLEEPER_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.RADGILL.get(), Attributes.MAX_HEALTH, Config.radgillMaxHealth);
+        event.add(ACEntityRegistry.RADGILL.get(), Attributes.MAX_HEALTH, Config.RADGILL_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.RAYCAT.get(), Attributes.MAX_HEALTH, Config.raycatMaxHealth);
-        event.add(ACEntityRegistry.RAYCAT.get(), Attributes.ATTACK_DAMAGE, Config.raycatAttackDamage);
+        event.add(ACEntityRegistry.RAYCAT.get(), Attributes.MAX_HEALTH, Config.RAYCAT_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.RAYCAT.get(), Attributes.ATTACK_DAMAGE, Config.RAYCAT_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.RELICHEIRUS.get(), Attributes.MAX_HEALTH, Config.relicheirusMaxHealth);
-        event.add(ACEntityRegistry.RELICHEIRUS.get(), Attributes.ATTACK_DAMAGE, Config.relicheirusAttackDamage);
+        event.add(ACEntityRegistry.RELICHEIRUS.get(), Attributes.MAX_HEALTH, Config.RELICHEIRUS_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.RELICHEIRUS.get(), Attributes.ATTACK_DAMAGE, Config.RELICHEIRUS_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.SEA_PIG.get(), Attributes.MAX_HEALTH, Config.seaPigMaxHealth);
+        event.add(ACEntityRegistry.SEA_PIG.get(), Attributes.MAX_HEALTH, Config.SEA_PIG_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.MAX_HEALTH, Config.subterranodonMaxHealth);
-        event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.ATTACK_DAMAGE, Config.subterranodonAttackDamage);
+        event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.MAX_HEALTH, Config.SUBTERRANODON_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.ATTACK_DAMAGE, Config.SUBTERRANODON_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.TELETOR.get(), Attributes.MAX_HEALTH, Config.teletorMaxHealth);
-        event.add(ACEntityRegistry.TELETOR.get(), Attributes.ATTACK_DAMAGE, Config.teletorAttackDamage);
+        event.add(ACEntityRegistry.TELETOR.get(), Attributes.MAX_HEALTH, Config.TELETOR_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.TELETOR.get(), Attributes.ATTACK_DAMAGE, Config.TELETOR_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.TREMORSAURUS.get(), Attributes.MAX_HEALTH, Config.tremorsaurusMaxHealth);
-        event.add(ACEntityRegistry.TREMORSAURUS.get(), Attributes.ATTACK_DAMAGE, Config.tremorsaurusAttackDamage);
+        event.add(ACEntityRegistry.TREMORSAURUS.get(), Attributes.MAX_HEALTH, Config.TREMORSAURUS_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.TREMORSAURUS.get(), Attributes.ATTACK_DAMAGE, Config.TREMORSAURUS_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.TRILOCARIS.get(), Attributes.MAX_HEALTH, Config.trilocarisMaxHealth);
-        event.add(ACEntityRegistry.TRILOCARIS.get(), Attributes.ATTACK_DAMAGE, Config.trilocarisAttackDamage);
+        event.add(ACEntityRegistry.TRILOCARIS.get(), Attributes.MAX_HEALTH, Config.TRILOCARIS_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.TRILOCARIS.get(), Attributes.ATTACK_DAMAGE, Config.TRILOCARIS_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.TRIPODFISH.get(), Attributes.MAX_HEALTH, Config.tripodfishMaxHealth);
+        event.add(ACEntityRegistry.TRIPODFISH.get(), Attributes.MAX_HEALTH, Config.TRIPODFISH_MAX_HEALTH.get());
 
-        event.add(ACEntityRegistry.UNDERZEALOT.get(), Attributes.MAX_HEALTH, Config.underzealotMaxHealth);
-        event.add(ACEntityRegistry.UNDERZEALOT.get(), Attributes.ATTACK_DAMAGE, Config.underzealotAttackDamage);
+        event.add(ACEntityRegistry.UNDERZEALOT.get(), Attributes.MAX_HEALTH, Config.UNDERZEALOT_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.UNDERZEALOT.get(), Attributes.ATTACK_DAMAGE, Config.UNDERZEALOT_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.VALLUMRAPTOR.get(), Attributes.MAX_HEALTH, Config.vallumraptorMaxHealth);
-        event.add(ACEntityRegistry.VALLUMRAPTOR.get(), Attributes.ATTACK_DAMAGE, Config.vallumraptorAttackDamage);
+        event.add(ACEntityRegistry.VALLUMRAPTOR.get(), Attributes.MAX_HEALTH, Config.VALLUMRAPTOR_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.VALLUMRAPTOR.get(), Attributes.ATTACK_DAMAGE, Config.VALLUMRAPTOR_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.VESPER.get(), Attributes.MAX_HEALTH, Config.vesperMaxHealth);
-        event.add(ACEntityRegistry.VESPER.get(), Attributes.ATTACK_DAMAGE, Config.vesperAttackDamage);
+        event.add(ACEntityRegistry.VESPER.get(), Attributes.MAX_HEALTH, Config.VESPER_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.VESPER.get(), Attributes.ATTACK_DAMAGE, Config.VESPER_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.WATCHER.get(), Attributes.MAX_HEALTH, Config.watcherMaxHealth);
-        event.add(ACEntityRegistry.WATCHER.get(), Attributes.ATTACK_DAMAGE, Config.watcherAttackDamage);
+        event.add(ACEntityRegistry.WATCHER.get(), Attributes.MAX_HEALTH, Config.WATCHER_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.WATCHER.get(), Attributes.ATTACK_DAMAGE, Config.WATCHER_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.MAX_HEALTH, Config.luxtructosaurusMaxHealth);
-        event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.ATTACK_DAMAGE, Config.luxtructosaurusAttackDamage);
+        event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.MAX_HEALTH, Config.LUXTRUCTOSAURUS_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.ATTACK_DAMAGE, Config.LUXTRUCTOSAURUS_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.MAX_HEALTH, Config.atlatitanMaxHealth);
-        event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.ATTACK_DAMAGE, Config.atlatitanAttackDamage);
+        event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.MAX_HEALTH, Config.ATLATITAN_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.ATTACK_DAMAGE, Config.ATLATITAN_ATTACK_DAMAGE.get());
 
-        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.MAX_HEALTH, Config.tremorzillaMaxHealth);
-        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.ATTACK_DAMAGE, Config.tremorzillaAttackDamage);
+        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.MAX_HEALTH, Config.TREMORZILLA_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.ATTACK_DAMAGE, Config.TREMORZILLA_ATTACK_DAMAGE.get());
     }
 
     private static void loadTACTConfigsEarly() {

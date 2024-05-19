@@ -15,10 +15,10 @@ public abstract class RaygunItemMixin {
             require = 0)
     private float tact_configurableRaygunDamaging(float damage, @Local(ordinal = 1) boolean gamma) {
         if (gamma) {
-            return Config.raygunGammaDamage;
+            return Config.RAYGUN_GAMMA_DAMAGE.get().floatValue();
         }
         else {
-            return Config.raygunNormalDamage;
+            return Config.RAYGUN_NORMAL_DAMAGE.get().floatValue();
         }
     }
 }

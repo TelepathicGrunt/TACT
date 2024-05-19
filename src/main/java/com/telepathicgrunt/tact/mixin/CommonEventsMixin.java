@@ -16,7 +16,7 @@ public abstract class CommonEventsMixin {
             at = @At(value = "INVOKE", target = "Lcom/github/alexmodguy/alexscaves/server/potion/DarknessIncarnateEffect;isInLight(Lnet/minecraft/world/entity/LivingEntity;I)Z", ordinal = 0, remap = false),
             require = 0, remap = false)
     private boolean tact_configurableDarknessCloakAbilityInLight2(LivingEntity living, int threshold, Operation<Boolean> original) {
-        if (Config.allowedCloakOfDarknessAbilityInLight) {
+        if (Config.ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT.get()) {
             return false;
         }
         return original.call(living, threshold);

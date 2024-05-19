@@ -13,7 +13,7 @@ import java.util.Optional;
 public class BlockModifications {
 
     static void setupModifications(final FMLCommonSetupEvent event) {
-        if (Config.replaceableSmallPlants) {
+        if (Config.REPLACEABLE_SMALL_PLANTS.get()) {
             makeReplaceable(new ResourceLocation(TACT.ALEXS_CAVES_MODID, "underweed"));
             makeReplaceable(new ResourceLocation(TACT.ALEXS_CAVES_MODID, "tree_star"));
             makeReplaceable(new ResourceLocation(TACT.ALEXS_CAVES_MODID, "fiddlehead"));

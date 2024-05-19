@@ -27,7 +27,6 @@ public class TACT {
     public TACT() {
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(Config::onLoad);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(DataAndResourcePacks::setupBuiltInDataPack);
         modEventBus.addListener(EntityAttributeModifications::AttributeModifications);

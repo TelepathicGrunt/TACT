@@ -19,7 +19,7 @@ public abstract class FerrouslimeEntityMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;setBaseValue(D)V", ordinal = 0),
             require = 0)
     private double tact_headMaxHealth(double maxHealth) {
-        double baseHealth = Config.ferrouslimeMaxHealth;
+        double baseHealth = Config.FERROUSLIME_MAX_HEALTH.get();
         return Mth.clamp(this.getHeadCount() * baseHealth, baseHealth, baseHealth * 10);
     }
 
@@ -27,7 +27,7 @@ public abstract class FerrouslimeEntityMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;setBaseValue(D)V", ordinal = 1),
             require = 0)
     private double tact_headAttackDamage(double attackDamage) {
-        double baseAttackDamage = Config.ferrouslimeAttackDamage;
+        double baseAttackDamage = Config.FERROUSLIME_ATTACK_DAMAGE.get();
         return Mth.clamp(this.getHeadCount() * baseAttackDamage, baseAttackDamage, baseAttackDamage * 5);
     }
 }

@@ -21,7 +21,7 @@ public class DataAndResourcePacks {
 
     static void setupBuiltInDataPack(final AddPackFindersEvent event) {
         try {
-            if (Config.applyTagAdjustments && event.getPackType() == PackType.SERVER_DATA) {
+            if (Config.APPLY_TAG_ADJUSTMENTS.get() && event.getPackType() == PackType.SERVER_DATA) {
                 var resourcePath =  ModList.get().getModFileById(TACT.MODID).getFile()
                         .findResource("datapacks/apply_tag_adjustments");
 
@@ -37,7 +37,7 @@ public class DataAndResourcePacks {
                 event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
             }
 
-            if (Config.applySpelunkeryCompatAdjustments && event.getPackType() == PackType.SERVER_DATA && ModList.get().isLoaded("spelunkery")) {
+            if (Config.APPLY_SPELUNKERY_COMPAT_ADJUSTMENTS.get() && event.getPackType() == PackType.SERVER_DATA && ModList.get().isLoaded("spelunkery")) {
                 var resourcePath =  ModList.get().getModFileById(TACT.MODID).getFile()
                         .findResource("datapacks/spelunkery_compat_adjustments");
 
@@ -56,7 +56,7 @@ public class DataAndResourcePacks {
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
                 loadTACTConfigsEarly();
 
-                if (Config.restoreEndStory) {
+                if (Config.RESTORE_END_STORY.get()) {
                     var resourcePath =  ModList.get().getModFileById(TACT.MODID).getFile()
                             .findResource("resourcepacks/restore_end_story");
 

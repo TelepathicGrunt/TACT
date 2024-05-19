@@ -28,6 +28,6 @@ public abstract class TremorsaurusEntityMixin extends LivingEntity {
             require = 0,
             index = 1)
     private float tact_tremorsaurusDamaging(float damage) {
-        return (float) (Math.max((Config.tremorsaurusAttackDamage / 2d) + this.getRandom().nextInt(2), 0));
+        return (float) (Math.max((Config.TREMORSAURUS_ATTACK_DAMAGE.get() / 2d) + this.getRandom().nextInt(2), 0));
     }
 }

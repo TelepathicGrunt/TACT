@@ -18,7 +18,7 @@ public class CompendiumUnlock {
             TagKey.create(Registries.BIOME, new ResourceLocation("alexscaves", "alexs_caves_biomes"));
 
     public static void playerLoggedIn(final PlayerEvent.PlayerLoggedInEvent event) {
-        if (!Config.unlockAllCompendiumInfo) {
+        if (!Config.UNLOCK_ALL_COMPENDIUM_INFO.get()) {
             return;
         }
 

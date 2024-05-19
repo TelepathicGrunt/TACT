@@ -25,10 +25,10 @@ public class SubterranodonEntityMixin {
     private float tact_subterranodonFlight(float flightPower) {
         float diff = flightPower - getMeterAmount();
         if (diff > 0) {
-            diff *= (float) Config.subterranodonFlightMeterRechargeSpeed;
+            diff *= Config.SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED.get().floatValue();
         }
         else {
-            diff *= (float) Config.subterranodonFlightMeterUsageSpeed;
+            diff *= Config.SUBTERRANODON_FLIGHT_METER_USAGE_SPEED.get().floatValue();
         }
         return diff + getMeterAmount();
     }

@@ -22,10 +22,10 @@ public class ItemModifications {
             ItemStack usedItem = attacker.getMainHandItem();
 
             if (usedItem.is(ACItemRegistry.PRIMITIVE_CLUB.get())) {
-                int extraTime = Config.primitiveClubRandomExtraStunTime == 0 ?
-                        0 : affectedEntity.getRandom().nextInt(Config.primitiveClubRandomExtraStunTime);
+                int extraTime = Config.PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get() == 0 ?
+                        0 : affectedEntity.getRandom().nextInt(Config.PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME.get());
 
-                ((MobEffectInstanceAccessor)currentEffect).setDuration(Config.primitiveClubBaseStunTime + extraTime);
+                ((MobEffectInstanceAccessor)currentEffect).setDuration(Config.PRIMITIVE_CLUB_BASE_STUN_TIME.get() + extraTime);
             }
         }
     }

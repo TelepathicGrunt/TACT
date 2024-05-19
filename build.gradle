@@ -179,7 +179,7 @@ task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge)
     apiToken = "$System.env.CURSEFORGEKEY"
     int projectId = 926263
 
-    def mainFile = upload(projectId, jar)
+    def mainFile = upload(projectId, tasks.jarJar.archiveFile)
     mainFile.changelog = changelogText
     mainFile.addGameVersion("1.20.1")
     mainFile.changelogType = "markdown"

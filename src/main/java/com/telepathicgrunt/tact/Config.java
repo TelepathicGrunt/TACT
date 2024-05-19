@@ -20,6 +20,7 @@ public class Config {
 
     private static final ForgeConfigSpec.DoubleValue RAYGUN_NORMAL_DAMAGE;
     private static final ForgeConfigSpec.DoubleValue RAYGUN_GAMMA_DAMAGE;
+    private static final ForgeConfigSpec.BooleanValue ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT;
 
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_MAX_HEALTH;
     private static final ForgeConfigSpec.DoubleValue BOUNDROID_ATTACK_DAMAGE;
@@ -177,6 +178,18 @@ public class Config {
                      Putting 2 will deplete the meter twice as fast. Putting 0.5 will slow the meter's usage rate.
                     """)
                 .defineInRange("subterranodonFlightMeterUsageSpeed", 1D, 0, 1000);
+
+        configBuilder.push("Cloak of Darkness Options");
+
+        ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Whether Cloak of Darkness's ability should be usable anywhere. Including in bright light or sunlight.
+                    """)
+                .define("AllowedCloakOfDarknessAbilityInLight",  false);
+
+        configBuilder.pop();
 
         configBuilder.push("Raygun Options");
 
@@ -402,6 +415,7 @@ public class Config {
 
     public static float raygunNormalDamage;
     public static float raygunGammaDamage;
+    public static boolean allowedCloakOfDarknessAbilityInLight;
 
     public static double boundroidMaxHealth;
     public static double boundroidAttackDamage;
@@ -479,6 +493,7 @@ public class Config {
 
         raygunNormalDamage = RAYGUN_NORMAL_DAMAGE.get().floatValue();
         raygunGammaDamage = RAYGUN_GAMMA_DAMAGE.get().floatValue();
+        allowedCloakOfDarknessAbilityInLight = ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT.get();
 
         boundroidMaxHealth = BOUNDROID_MAX_HEALTH.get();
         boundroidAttackDamage = BOUNDROID_ATTACK_DAMAGE.get();

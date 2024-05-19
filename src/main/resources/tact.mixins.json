@@ -5,6 +5,8 @@
   "refmap": "tact.refmap.json",
   "mixins": [
     "BlockStateBaseAccessor",
+    "CommonEventsMixin",
+    "DarknessArmorItemMixin",
     "DreadbowItemMixin",
     "FerrouslimeEntityMixin",
     "GeodeFeatureMixin",

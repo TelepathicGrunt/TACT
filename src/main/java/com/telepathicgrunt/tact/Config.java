@@ -82,7 +82,12 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue ATLATITAN_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue ATLATITAN_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue TREMORZILLA_MAX_HEALTH;
-    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_WEAK_STOMP_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_STRONG_STOMP_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_SCRATCH_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_TAIL_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_BITE_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_BEAM_ATTACK_DAMAGE;
 
     static {
         ForgeConfigSpec.Builder configBuilder = new ForgeConfigSpec.Builder();
@@ -393,8 +398,23 @@ public class Config {
         TREMORZILLA_MAX_HEALTH = configBuilder
                 .defineInRange("tremorzillaMaxHealth", 500d, 1, 1000000);
 
-        TREMORZILLA_ATTACK_DAMAGE = configBuilder
-                .defineInRange("tremorzillaAttackDamage", 30.0d, 1, 1000000);
+        TREMORZILLA_WEAK_STOMP_DAMAGE = configBuilder
+                .defineInRange("tremorzillaWeakStompDamage", 2.0d, 1, 1000000);
+
+        TREMORZILLA_STRONG_STOMP_DAMAGE = configBuilder
+                .defineInRange("tremorzillaStrongStompDamage", 10.0d, 1, 1000000);
+
+        TREMORZILLA_SCRATCH_ATTACK_DAMAGE = configBuilder
+                .defineInRange("tremorzillaScratchAttackDamage", 10.0d, 1, 1000000);
+
+        TREMORZILLA_TAIL_ATTACK_DAMAGE = configBuilder
+                .defineInRange("tremorzillaTailAttackDamage", 10.0d, 1, 1000000);
+
+        TREMORZILLA_BITE_ATTACK_DAMAGE = configBuilder
+                .defineInRange("tremorzillaBiteAttackDamage", 10.0d, 1, 1000000);
+
+        TREMORZILLA_BEAM_ATTACK_DAMAGE = configBuilder
+                .defineInRange("tremorzillaBeamAttackDamage", 20.0d, 1, 1000000);
 
 
         configBuilder.pop();

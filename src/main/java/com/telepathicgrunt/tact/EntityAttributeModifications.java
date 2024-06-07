@@ -109,7 +109,6 @@ public class EntityAttributeModifications {
         event.add(ACEntityRegistry.ATLATITAN.get(), Attributes.ATTACK_DAMAGE, Config.ATLATITAN_ATTACK_DAMAGE.get());
 
         event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.MAX_HEALTH, Config.TREMORZILLA_MAX_HEALTH.get());
-        event.add(ACEntityRegistry.TREMORZILLA.get(), Attributes.ATTACK_DAMAGE, Config.TREMORZILLA_ATTACK_DAMAGE.get());
     }
 
     private static void loadTACTConfigsEarly() {

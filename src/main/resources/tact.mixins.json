@@ -15,6 +15,7 @@
     "RaygunItemMixin",
     "SubterranodonEntityMixin",
     "TremorsaurusEntityMixin",
+    "TremorzillaEntityMixin",
     "VallumraptorEntityMixin"
   ],
   "client": [],

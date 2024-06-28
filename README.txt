@@ -10,7 +10,7 @@ Adjustments done:
 
 - Added config option to adjust how many arrows Dreadbow will spawn per arrow type.
 
-- Added config options to change health and attack damage for nearly all Alex's Caves mobs.
+- Added config options to change health, armor, and attack damage for nearly all Alex's Caves mobs.
 
 - Added configs to control the recharge and depletion rate of Subterranodon's flight meter.
 

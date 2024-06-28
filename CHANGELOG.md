@@ -1,6 +1,4 @@
-### **(V.1.1.6 Changes) (1.20.1 Minecraft)**
+### **(V.1.1.7 Changes) (1.20.1 Minecraft)**
 
-#### Entities:
-Removed Tremorzilla attack config and replaced it with 6 new config to control the attack damage to each of its attacks.
-The original config was setting the attack attribute, but it turned out that Tremorzilla does not actually use the attack attribute at all.
-Instead, I needed to modify the hardcoded damage for each of its attacks.
+#### Blocks:
+Added Galena and Radrock to `minecraft:stone_crafting_materials` and to `minecraft:stone_tool_materials` item tags so these cobbled-looking stone can be more useful!

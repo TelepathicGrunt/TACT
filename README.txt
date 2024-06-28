@@ -24,6 +24,8 @@ Adjustments done:
 
 - Made Underweed, Tree Star, Fiddlehead, and Curly Fern be replaceable by blocks in your hand just like how vanilla grass and fern can be replaced by player block placing.
 
+- Added Galena and Radrock to `minecraft:stone_crafting_materials` and to `minecraft:stone_tool_materials` item tags so these cobbled-looking stone can be more useful!
+
 - Added all Alex's Cave biomes to `minecraft:is_overworld` tag for compatibility with other mods and datapacks.
 
 - Added Forlorn Hollows, Magnetic Caves, Primordial Caves, and Toxic Caves to `forge:is_cave` for better mod compat.

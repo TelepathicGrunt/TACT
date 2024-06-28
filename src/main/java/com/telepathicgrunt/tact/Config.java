@@ -50,6 +50,8 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue FERROUSLIME_ARMOR;
     public static final ForgeConfigSpec.DoubleValue FORSAKEN_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue FORSAKEN_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue FORSAKEN_SONIC_BOOM_NORMAL_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue FORSAKEN_SONIC_BOOM_WEAK_TAGGED_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue FORSAKEN_ARMOR;
     public static final ForgeConfigSpec.DoubleValue GAMMAROACH_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue GAMMAROACH_ATTACK_DAMAGE;
@@ -69,6 +71,7 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_FIRE_BREATH_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue MAGNETRON_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue MAGNETRON_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue MAGNETRON_ARMOR;
@@ -337,6 +340,12 @@ public class Config {
         FORSAKEN_ATTACK_DAMAGE = configBuilder
                 .defineInRange("forsakenAttackDamage", 10.0d, 1, 1000000);
 
+        FORSAKEN_SONIC_BOOM_NORMAL_ATTACK_DAMAGE = configBuilder
+                .defineInRange("forsakenSonicBoomNormalAttackDamage", 4.0d, 1, 1000000);
+
+        FORSAKEN_SONIC_BOOM_WEAK_TAGGED_ATTACK_DAMAGE = configBuilder
+                .defineInRange("forsakenSonicBoomWeakTaggedAttackDamage", 45.0d, 1, 1000000);
+
         FORSAKEN_ARMOR = configBuilder
                 .defineInRange("forsakenArmor", 0.0d, 0, 1000000);
 
@@ -393,6 +402,9 @@ public class Config {
 
         LUXTRUCTOSAURUS_ARMOR = configBuilder
                 .defineInRange("luxtructosaurusArmor", 20.0d, 0, 1000000);
+
+        LUXTRUCTOSAURUS_FIRE_BREATH_ATTACK_DAMAGE = configBuilder
+                .defineInRange("luxtructosaurusFireBreathAttackDamage", 3.0d, 1, 1000000);
 
         MAGNETRON_MAX_HEALTH = configBuilder
                 .defineInRange("magnetronMaxHealth", 30d, 1, 1000000);

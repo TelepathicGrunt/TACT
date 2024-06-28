@@ -1,3 +1,11 @@
+### **(V.1.1.8 Changes) (1.20.1 Minecraft)**
+
+#### Entities:
+Added configs to change the hardcoded attack damage values for Forsaken's Sonic Boom attacks.
+
+Added config to change Luxtructosaurus's hardcoded fire breath attack damage.
+
+
 ### **(V.1.1.7 Changes) (1.20.1 Minecraft)**
 
 #### Blocks:

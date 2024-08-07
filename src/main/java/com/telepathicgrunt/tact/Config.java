@@ -10,6 +10,7 @@ public class Config {
     public static final ForgeConfigSpec.BooleanValue APPLY_TAG_ADJUSTMENTS;
     public static final ForgeConfigSpec.BooleanValue APPLY_SPELUNKERY_COMPAT_ADJUSTMENTS;
     public static final ForgeConfigSpec.BooleanValue REPLACEABLE_SMALL_PLANTS;
+    public static final ForgeConfigSpec.BooleanValue GUANO_BURN_FUEL;
     public static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_BASE_STUN_TIME;
     public static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME;
     public static final ForgeConfigSpec.BooleanValue RESTORE_END_STORY;
@@ -154,6 +155,14 @@ public class Config {
                      another block when right clicking them while holding a block in your hands.
                     """)
                 .define("replaceableSmallPlants", true);
+
+        GUANO_BURN_FUEL = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Whether to make Guano, Guano Block, and Guano Layer be able to be used as fuel in Furnaces.
+                    """)
+                .define("guanoBurnFuel", true);
 
         PRIMITIVE_CLUB_BASE_STUN_TIME = configBuilder
                 .comment("""

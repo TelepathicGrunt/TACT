@@ -18,6 +18,8 @@ Adjustments done:
 
 - Added config option to allow Cloak of Darkness to charge and use ability in bight light areas.
 
+- Added config to allow making Guano, Guano Block, and Guano Layer be usable as Furnace fuel.
+
 - Added config option to disable the End Story replacement that Alex's Caves replaced when beating Ender Dragon. (Not disabled by default)
 
 - Added config option to unlock all pages in the Cave Compendium book on log in. (Config is off by default)

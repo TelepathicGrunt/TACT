@@ -1,3 +1,9 @@
+### **(V.1.1.9 Changes) (1.20.1 Minecraft)**
+
+#### Blocks:
+Added `guanoBurnFuel` config to allow making Guano, Guano Block, and Guano Layer be usable as Furnace fuel. Default to true.
+
+
 ### **(V.1.1.8 Changes) (1.20.1 Minecraft)**
 
 #### Entities:

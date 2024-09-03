@@ -18,6 +18,7 @@ public class Config {
     public static final ForgeConfigSpec.ConfigValue<String> DREADBOW_ARROW_RAIN_OVERRIDES;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_USAGE_SPEED;
+    public static final ForgeConfigSpec.DoubleValue NUCLEAR_FURNACE_SMELTING_SPEED_MODIFIER;
 
     public static final ForgeConfigSpec.DoubleValue RAYGUN_NORMAL_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue RAYGUN_GAMMA_DAMAGE;
@@ -230,6 +231,19 @@ public class Config {
                      Putting 2 will deplete the meter twice as fast. Putting 0.5 will slow the meter's usage rate.
                     """)
                 .defineInRange("subterranodonFlightMeterUsageSpeed", 1D, 0, 1000);
+
+        configBuilder.push("Nuclear Furnace Options");
+
+        NUCLEAR_FURNACE_SMELTING_SPEED_MODIFIER = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Multiplies the calculated item smelting time in Nuclear Furnace by this number.
+                     Lower number means faster smelting. Higher number means slower.
+                    """)
+                .defineInRange("nuclearFurnaceSmeltingSpeedModifier", 1D, 0, 1000000);
+
+        configBuilder.pop();
 
         configBuilder.push("Cloak of Darkness Options");
 

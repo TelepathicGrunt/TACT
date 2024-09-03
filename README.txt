@@ -8,6 +8,8 @@ Adjustments done:
 
 - Added config option to change the stun duration of Primitive Club.
 
+- Added config to allow changing the speed of Nuclear Furnace smelting time.
+
 - Added config option to adjust how many arrows Dreadbow will spawn per arrow type.
 
 - Added config options to change health, armor, and attack damage for nearly all Alex's Caves mobs.

@@ -620,4 +620,8 @@ public class Config {
 
         SPEC = configBuilder.build();
     }
+
+    static void onLoad(final ModConfigEvent event) {
+        DreadbowRainAttackModification.setDreadbowOverrides(DREADBOW_ARROW_RAIN_OVERRIDES.get());
+    }
 }

@@ -1,6 +1,5 @@
 package com.telepathicgrunt.tact.mixin;
 
-import com.github.alexmodguy.alexscaves.server.entity.living.TremorsaurusEntity;
 import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
 import com.telepathicgrunt.tact.Config;
 import net.minecraft.world.entity.EntityType;
@@ -138,5 +137,65 @@ public abstract class TremorzillaEntityMixin extends LivingEntity {
             remap = false)
     private float tact_tremorzillaBeamDamaging2(float damage) {
         return Config.TREMORZILLA_BEAM_ATTACK_DAMAGE.get().floatValue();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE",
+                    target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/TremorzillaEntity;healEveryTick(IF)V",
+                    ordinal = 0,
+                    remap = false),
+            index = 0)
+    private int tact_tremorzillaLowHealthRate(int tick) {
+        return Config.TREMORZILLA_LOW_HEALTH_RECOVERY_RATE_IN_TICKS.get();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE",
+                    target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/TremorzillaEntity;healEveryTick(IF)V",
+                    ordinal = 0,
+                    remap = false),
+            index = 1)
+    private float tact_tremorzillaLowHealthAmount(float health) {
+        return Config.TREMORZILLA_LOW_HEALTH_RECOVERY_AMOUNT.get().floatValue();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE",
+                    target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/TremorzillaEntity;healEveryTick(IF)V",
+                    ordinal = 1,
+                    remap = false),
+            index = 0)
+    private int tact_tremorzillaMediumHealthRate(int tick) {
+        return Config.TREMORZILLA_MEDIUM_HEALTH_RECOVERY_RATE_IN_TICKS.get();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE",
+                    target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/TremorzillaEntity;healEveryTick(IF)V",
+                    ordinal = 1,
+                    remap = false),
+            index = 1)
+    private float tact_tremorzillaMediumHealthAmount(float health) {
+        return Config.TREMORZILLA_MEDIUM_HEALTH_RECOVERY_AMOUNT.get().floatValue();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE",
+                    target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/TremorzillaEntity;healEveryTick(IF)V",
+                    ordinal = 2,
+                    remap = false),
+            index = 0)
+    private int tact_tremorzillaHighHealthRate(int tick) {
+        return Config.TREMORZILLA_HIGH_HEALTH_RECOVERY_RATE_IN_TICKS.get();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE",
+                    target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/TremorzillaEntity;healEveryTick(IF)V",
+                    ordinal = 2,
+                    remap = false),
+            index = 1)
+    private float tact_tremorzillaHighHealthAmount(float health) {
+        return Config.TREMORZILLA_HIGH_HEALTH_RECOVERY_AMOUNT.get().floatValue();
     }
 }

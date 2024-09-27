@@ -111,6 +111,12 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue TREMORZILLA_TAIL_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue TREMORZILLA_BITE_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue TREMORZILLA_BEAM_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_HIGH_HEALTH_RECOVERY_AMOUNT;
+    public static final ForgeConfigSpec.IntValue TREMORZILLA_HIGH_HEALTH_RECOVERY_RATE_IN_TICKS;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_MEDIUM_HEALTH_RECOVERY_AMOUNT;
+    public static final ForgeConfigSpec.IntValue TREMORZILLA_MEDIUM_HEALTH_RECOVERY_RATE_IN_TICKS;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_LOW_HEALTH_RECOVERY_AMOUNT;
+    public static final ForgeConfigSpec.IntValue TREMORZILLA_LOW_HEALTH_RECOVERY_RATE_IN_TICKS;
     public static final ForgeConfigSpec.DoubleValue TRILOCARIS_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue TRILOCARIS_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue TRILOCARIS_ARMOR;
@@ -539,6 +545,24 @@ public class Config {
 
         TREMORZILLA_BEAM_ATTACK_DAMAGE = configBuilder
                 .defineInRange("tremorzillaBeamAttackDamage", 20.0d, 1, 1000000);
+
+        TREMORZILLA_HIGH_HEALTH_RECOVERY_AMOUNT = configBuilder
+                .defineInRange("tremorzillaHighHealthRecoveryAmount", 2.0d, 0, 1000000);
+
+        TREMORZILLA_HIGH_HEALTH_RECOVERY_RATE_IN_TICKS = configBuilder
+                .defineInRange("tremorzillaHighHealthRecoveryRateInTicks", 100, 0, 1000000);
+
+        TREMORZILLA_MEDIUM_HEALTH_RECOVERY_AMOUNT = configBuilder
+                .defineInRange("tremorzillaMediumHealthRecoveryAmount", 3.0d, 0, 1000000);
+
+        TREMORZILLA_MEDIUM_HEALTH_RECOVERY_RATE_IN_TICKS = configBuilder
+                .defineInRange("tremorzillaMediumHealthRecoveryRateInTicks", 20, 0, 1000000);
+
+        TREMORZILLA_LOW_HEALTH_RECOVERY_AMOUNT = configBuilder
+                .defineInRange("tremorzillaLowHealthRecoveryAmount", 5.0d, 0, 1000000);
+
+        TREMORZILLA_LOW_HEALTH_RECOVERY_RATE_IN_TICKS = configBuilder
+                .defineInRange("tremorzillaLowHealthRecoveryRateInTicks", 10, 0, 1000000);
 
         TRILOCARIS_MAX_HEALTH = configBuilder
                 .defineInRange("trilocarisMaxHealth", 10d, 1, 1000000);

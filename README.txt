@@ -22,7 +22,7 @@ Adjustments done:
 
 - Added configs to control Extinction Spear's melee and ranged damage values.
 
-- Added config option to allow Cloak of Darkness to charge and use ability in bight light areas.
+- Added config option to allow Cloak of Darkness to charge and use ability in bright light areas.
 
 - Added config to allow making Guano, Guano Block, and Guano Layer be usable as Furnace fuel.
 

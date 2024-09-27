@@ -40,6 +40,9 @@ public class TACT {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> BlockModifications.setupModifications(event));
+        event.enqueueWork(() -> {
+            BlockModifications.doModifications(event);
+            ItemModifications.doItemAttributeModifications(event);
+        });
     }
 }

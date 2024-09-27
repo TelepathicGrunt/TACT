@@ -20,6 +20,8 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_USAGE_SPEED;
     public static final ForgeConfigSpec.DoubleValue NUCLEAR_FURNACE_SMELTING_SPEED_MODIFIER;
 
+    public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_MELEE_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_THROWN_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue RAYGUN_NORMAL_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue RAYGUN_GAMMA_DAMAGE;
     public static final ForgeConfigSpec.BooleanValue ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT;
@@ -260,6 +262,26 @@ public class Config {
                      Whether Cloak of Darkness's ability should be usable anywhere. Including in bright light or sunlight.
                     """)
                 .define("AllowedCloakOfDarknessAbilityInLight",  false);
+
+        configBuilder.pop();
+
+        configBuilder.push("Extinction Spear Options");
+
+        EXTINCTION_SPEAR_MELEE_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for melee attack with Extinction Spear.
+                    """)
+                .defineInRange("extinctionSpearMeleeDamage", 8D, 0, 10000);
+
+        EXTINCTION_SPEAR_THROWN_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for ranged attack with Extinction Spear.
+                    """)
+                .defineInRange("extinctionSpearRangedDamage", 10D, 0, 10000);
 
         configBuilder.pop();
 

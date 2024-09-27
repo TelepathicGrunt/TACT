@@ -5,3 +5,5 @@ Added 6 new configs to control the health recovery amount and health recovery sp
 
 #### Items:
 Fixed Dreadbow Arrow config not actually applying.
+
+Added configs to change Extinction Spear's damage amounts for melee and range.

@@ -14,9 +14,13 @@ Adjustments done:
 
 - Added config options to change health, armor, and attack damage for nearly all Alex's Caves mobs.
 
+- Added config to change Tremorzilla's health regeneration rates and health regeneration amounts.
+
 - Added configs to control the recharge and depletion rate of Subterranodon's flight meter.
 
 - Added configs to control Raygun damaging rates when Gamma enchanted and not enchanted.
+
+- Added configs to control Extinction Spear's melee and ranged damage values.
 
 - Added config option to allow Cloak of Darkness to charge and use ability in bight light areas.
 

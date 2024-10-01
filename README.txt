@@ -14,7 +14,7 @@ Adjustments done:
 
 - Added config options to change health, armor, and attack damage for nearly all Alex's Caves mobs.
 
-- Added config to change Tremorzilla's health regeneration rates and health regeneration amounts.
+- Added config to change Tremorzilla's health regeneration rates, health regeneration amounts, step height, and walking block griefing. However, turning off the walking block griefing could cause Tremorzilla to get stuck so please do not report pathfinding issues to Alex's Caves if you turn off the block griefing for when Tremorzilla walks.
 
 - Added configs to control the recharge and depletion rate of Subterranodon's flight meter.
 

@@ -119,6 +119,8 @@ public class Config {
     public static final ForgeConfigSpec.IntValue TREMORZILLA_MEDIUM_HEALTH_RECOVERY_RATE_IN_TICKS;
     public static final ForgeConfigSpec.DoubleValue TREMORZILLA_LOW_HEALTH_RECOVERY_AMOUNT;
     public static final ForgeConfigSpec.IntValue TREMORZILLA_LOW_HEALTH_RECOVERY_RATE_IN_TICKS;
+    public static final ForgeConfigSpec.DoubleValue TREMORZILLA_STEP_HEIGHT;
+    public static final ForgeConfigSpec.BooleanValue TREMORZILLA_WALKING_BLOCK_GRIEFING;
     public static final ForgeConfigSpec.DoubleValue TRILOCARIS_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue TRILOCARIS_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue TRILOCARIS_ARMOR;
@@ -585,6 +587,13 @@ public class Config {
 
         TREMORZILLA_LOW_HEALTH_RECOVERY_RATE_IN_TICKS = configBuilder
                 .defineInRange("tremorzillaLowHealthRecoveryRateInTicks", 10, 0, 1000000);
+
+        TREMORZILLA_STEP_HEIGHT = configBuilder
+                .defineInRange("tremorzillaStepHeight", 1.6d, 0, 1000000);
+
+        TREMORZILLA_WALKING_BLOCK_GRIEFING = configBuilder
+                .comment("NOTE: Turning this off could lead to Tremorzilla getting stuck with pathfinding!!! Do not report to Alex's Caves if you turned this off and the mob gets stuck.")
+                .define("tremorzillaWalkingBlockGriefing", true);
 
         TRILOCARIS_MAX_HEALTH = configBuilder
                 .defineInRange("trilocarisMaxHealth", 10d, 1, 1000000);

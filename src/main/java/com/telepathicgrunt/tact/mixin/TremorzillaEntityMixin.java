@@ -1,13 +1,16 @@
 package com.telepathicgrunt.tact.mixin;
 
 import com.github.alexmodguy.alexscaves.server.entity.living.TremorzillaEntity;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.telepathicgrunt.tact.Config;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(TremorzillaEntity.class)
 public abstract class TremorzillaEntityMixin extends LivingEntity {
@@ -197,5 +200,22 @@ public abstract class TremorzillaEntityMixin extends LivingEntity {
             index = 1)
     private float tact_tremorzillaHighHealthAmount(float health) {
         return Config.TREMORZILLA_HIGH_HEALTH_RECOVERY_AMOUNT.get().floatValue();
+    }
+
+    @ModifyReturnValue(method = "getStepHeight()F",
+            at = @At(value = "RETURN"),
+            remap = false)
+    private float tact_tremorzillaStepHeight(float stepHeight) {
+        return Config.TREMORZILLA_STEP_HEIGHT.get().floatValue();
+    }
+
+    @Inject(method = "breakBlocksInBoundingBox(F)Z",
+            at = @At(value = "HEAD"),
+            cancellable = true,
+            remap = false)
+    private void tact_tremorzillaStepBlockBreaking(float dropChance, CallbackInfoReturnable<Boolean> cir) {
+        if (!Config.TREMORZILLA_WALKING_BLOCK_GRIEFING.get()) {
+            cir.setReturnValue(false);
+        }
     }
 }

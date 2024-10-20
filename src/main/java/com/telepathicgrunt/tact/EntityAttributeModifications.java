@@ -33,6 +33,15 @@ public class EntityAttributeModifications {
         event.add(ACEntityRegistry.BRAINIAC.get(), Attributes.ATTACK_DAMAGE, Config.BRAINIAC_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.BRAINIAC.get(), Attributes.ARMOR, Config.BRAINIAC_ARMOR.get());
 
+        event.add(ACEntityRegistry.CANDICORN.get(), Attributes.MAX_HEALTH, Config.CANDICORN_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.CANDICORN.get(), Attributes.ATTACK_DAMAGE, Config.CANDICORN_ATTACK_DAMAGE.get());
+
+        event.add(ACEntityRegistry.CANIAC.get(), Attributes.MAX_HEALTH, Config.CANIAC_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.CANIAC.get(), Attributes.ATTACK_DAMAGE, Config.CANIAC_ATTACK_DAMAGE.get());
+
+        event.add(ACEntityRegistry.CARAMEL_CUBE.get(), Attributes.MAX_HEALTH, Config.CARAMEL_CUBE_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.CARAMEL_CUBE.get(), Attributes.ATTACK_DAMAGE, Config.CARAMEL_CUBE_ATTACK_DAMAGE.get());
+
         event.add(ACEntityRegistry.CORRODENT.get(), Attributes.MAX_HEALTH, Config.CORRODENT_MAX_HEALTH.get());
         event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ATTACK_DAMAGE, Config.CORRODENT_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ARMOR, Config.BOUNDROID_ARMOR.get());
@@ -61,6 +70,9 @@ public class EntityAttributeModifications {
         event.add(ACEntityRegistry.GAMMAROACH.get(), Attributes.ATTACK_DAMAGE, Config.GAMMAROACH_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.GAMMAROACH.get(), Attributes.ARMOR, Config.GAMMAROACH_ARMOR.get());
 
+        event.add(ACEntityRegistry.GINGERBREAD_MAN.get(), Attributes.MAX_HEALTH, Config.GINGERBREAD_MAN_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.GINGERBREAD_MAN.get(), Attributes.ATTACK_DAMAGE, Config.GINGERBREAD_MAN_ATTACK_DAMAGE.get());
+
         event.add(ACEntityRegistry.GLOOMOTH.get(), Attributes.MAX_HEALTH, Config.GLOOMOTH_MAX_HEALTH.get());
         event.add(ACEntityRegistry.GLOOMOTH.get(), Attributes.ARMOR, Config.GLOOMOTH_ARMOR.get());
 
@@ -71,12 +83,26 @@ public class EntityAttributeModifications {
         event.add(ACEntityRegistry.GROTTOCERATOPS.get(), Attributes.ATTACK_DAMAGE, Config.GROTTOCERATOPS_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.GROTTOCERATOPS.get(), Attributes.ARMOR, Config.GROTTOCERATOPS_ARMOR.get());
 
+        event.add(ACEntityRegistry.GUMBEEPER.get(), Attributes.MAX_HEALTH, Config.GUMBEEPER_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.GUMBEEPER.get(), Attributes.ATTACK_DAMAGE, Config.GUMBEEPER_ATTACK_DAMAGE.get());
+        event.add(ACEntityRegistry.GUMBEEPER.get(), Attributes.ARMOR, Config.GUMBEEPER_ARMOR.get());
+
+        event.add(ACEntityRegistry.GUMMY_BEAR.get(), Attributes.MAX_HEALTH, Config.GUMMY_BEAR_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.GUMMY_BEAR.get(), Attributes.ATTACK_DAMAGE, Config.GUMMY_BEAR_ATTACK_DAMAGE.get());
+
+        event.add(ACEntityRegistry.GUM_WORM.get(), Attributes.MAX_HEALTH, Config.GUM_WORM_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.GUM_WORM.get(), Attributes.ATTACK_DAMAGE, Config.GUM_WORM_ATTACK_DAMAGE.get());
+        event.add(ACEntityRegistry.GUM_WORM.get(), Attributes.ARMOR, Config.GUM_WORM_ARMOR.get());
+
         event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.MAX_HEALTH, Config.HULLBREAKER_MAX_HEALTH.get());
         event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.ATTACK_DAMAGE, Config.HULLBREAKER_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.HULLBREAKER.get(), Attributes.ARMOR, Config.HULLBREAKER_ARMOR.get());
 
         event.add(ACEntityRegistry.LANTERNFISH.get(), Attributes.MAX_HEALTH, Config.LANTERNFISH_MAX_HEALTH.get());
         event.add(ACEntityRegistry.LANTERNFISH.get(), Attributes.ARMOR, Config.LANTERNFISH_ARMOR.get());
+
+        event.add(ACEntityRegistry.LICOWITCH.get(), Attributes.MAX_HEALTH, Config.LICOWITCH_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.LICOWITCH.get(), Attributes.ATTACK_DAMAGE, Config.LICOWITCH_ATTACK_DAMAGE.get());
 
         event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.MAX_HEALTH, Config.LUXTRUCTOSAURUS_MAX_HEALTH.get());
         event.add(ACEntityRegistry.LUXTRUCTOSAURUS.get(), Attributes.ATTACK_DAMAGE, Config.LUXTRUCTOSAURUS_ATTACK_DAMAGE.get());
@@ -113,6 +139,8 @@ public class EntityAttributeModifications {
         event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.MAX_HEALTH, Config.SUBTERRANODON_MAX_HEALTH.get());
         event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.ATTACK_DAMAGE, Config.SUBTERRANODON_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.ARMOR, Config.SUBTERRANODON_ARMOR.get());
+
+        event.add(ACEntityRegistry.SWEETISH_FISH.get(), Attributes.MAX_HEALTH, Config.SUBTERRANODON_MAX_HEALTH.get());
 
         event.add(ACEntityRegistry.TELETOR.get(), Attributes.MAX_HEALTH, Config.TELETOR_MAX_HEALTH.get());
         event.add(ACEntityRegistry.TELETOR.get(), Attributes.ATTACK_DAMAGE, Config.TELETOR_ATTACK_DAMAGE.get());

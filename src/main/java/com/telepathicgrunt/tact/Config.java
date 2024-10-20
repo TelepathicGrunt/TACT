@@ -37,6 +37,12 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue BRAINIAC_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue BRAINIAC_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue BRAINIAC_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue CANDICORN_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue CANDICORN_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue CANIAC_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue CANIAC_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue CARAMEL_CUBE_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue CARAMEL_CUBE_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue CORRODENT_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue CORRODENT_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue CORRODENT_ARMOR;
@@ -60,6 +66,8 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue GAMMAROACH_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue GAMMAROACH_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue GAMMAROACH_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue GINGERBREAD_MAN_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue GINGERBREAD_MAN_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue GLOOMOTH_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue GLOOMOTH_ARMOR;
     public static final ForgeConfigSpec.DoubleValue GOSSAMER_WORM_MAX_HEALTH;
@@ -67,11 +75,21 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue GROTTOCERATOPS_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue GROTTOCERATOPS_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue GROTTOCERATOPS_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue GUMBEEPER_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue GUMBEEPER_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue GUMBEEPER_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue GUMMY_BEAR_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue GUMMY_BEAR_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue GUM_WORM_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue GUM_WORM_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue GUM_WORM_ARMOR;
     public static final ForgeConfigSpec.DoubleValue HULLBREAKER_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue HULLBREAKER_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue HULLBREAKER_ARMOR;
     public static final ForgeConfigSpec.DoubleValue LANTERNFISH_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue LANTERNFISH_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue LICOWITCH_MAX_HEALTH;
+    public static final ForgeConfigSpec.DoubleValue LICOWITCH_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ARMOR;
@@ -96,6 +114,7 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue RELICHEIRUS_ARMOR;
     public static final ForgeConfigSpec.DoubleValue SEA_PIG_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue SEA_PIG_ARMOR;
+    public static final ForgeConfigSpec.DoubleValue SWEETISH_FISH_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_ARMOR;
@@ -138,6 +157,8 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue WATCHER_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue WATCHER_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue WATCHER_ARMOR;
+
+    public static final ForgeConfigSpec.IntValue CONFIG_VERSION;
 
     static {
         ForgeConfigSpec.Builder configBuilder = new ForgeConfigSpec.Builder();
@@ -218,7 +239,7 @@ public class Config {
                      Format is the arrow item registry name. Then an equal sign =. And ends with the arrow amount.
                      Separate multiple entries with a comma , and whitespace will be ignored.
                      Example: "alexscaves:seeking_arrow=5, alexscaves:burrowing_arrow=100"
-                     
+                    
                      Otherwise, will default to Alex's Caves original code for determining arrow amount for
                      the attack which is 30 arrows for dark colored arrows and 5 arrows for all other arrows.
                     """)
@@ -342,6 +363,24 @@ public class Config {
         BRAINIAC_ARMOR = configBuilder
                 .defineInRange("brainiacArmor", 8.0d, 0, 1000000);
 
+        CANDICORN_MAX_HEALTH = configBuilder
+                .defineInRange("candicornMaxHealth", 30d, 1, 1000000);
+
+        CANDICORN_ATTACK_DAMAGE = configBuilder
+                .defineInRange("candicornAttackDamage", 6.0d, 1, 1000000);
+
+        CANIAC_MAX_HEALTH = configBuilder
+                .defineInRange("caniacMaxHealth", 38d, 1, 1000000);
+
+        CANIAC_ATTACK_DAMAGE = configBuilder
+                .defineInRange("caniacAttackDamage", 2.0d, 1, 1000000);
+
+        CARAMEL_CUBE_MAX_HEALTH = configBuilder
+                .defineInRange("caramelCubeMaxHealth", 4d, 1, 1000000);
+
+        CARAMEL_CUBE_ATTACK_DAMAGE = configBuilder
+                .defineInRange("caramelCubeAttackDamage", 2.0d, 1, 1000000);
+
         CORRODENT_MAX_HEALTH = configBuilder
                 .defineInRange("corrodentMaxHealth", 16d, 1, 1000000);
 
@@ -411,6 +450,12 @@ public class Config {
         GAMMAROACH_ARMOR = configBuilder
                 .defineInRange("gammaroachArmor", 0.0d, 0, 1000000);
 
+        GINGERBREAD_MAN_MAX_HEALTH = configBuilder
+                .defineInRange("gingerbreadManMaxHealth", 10d, 1, 1000000);
+
+        GINGERBREAD_MAN_ATTACK_DAMAGE = configBuilder
+                .defineInRange("gingerbreadManAttackDamage", 2.0d, 1, 1000000);
+
         GLOOMOTH_MAX_HEALTH = configBuilder
                 .defineInRange("gloomothMaxHealth", 4d, 1, 1000000);
 
@@ -432,6 +477,30 @@ public class Config {
         GROTTOCERATOPS_ARMOR = configBuilder
                 .defineInRange("grottoceratopsArmor", 8.0d, 0, 1000000);
 
+        GUMBEEPER_MAX_HEALTH = configBuilder
+                .defineInRange("gumbeeperMaxHealth", 14d, 1, 1000000);
+
+        GUMBEEPER_ATTACK_DAMAGE = configBuilder
+                .defineInRange("gumbeeperAttackDamage", 4.0d, 1, 1000000);
+
+        GUMBEEPER_ARMOR = configBuilder
+                .defineInRange("gumbeeperArmor", 4.0d, 0, 1000000);
+
+        GUMMY_BEAR_MAX_HEALTH = configBuilder
+                .defineInRange("gummyBearMaxHealth", 36d, 1, 1000000);
+
+        GUMMY_BEAR_ATTACK_DAMAGE = configBuilder
+                .defineInRange("gummyBearAttackDamage", 4.0d, 1, 1000000);
+
+        GUM_WORM_MAX_HEALTH = configBuilder
+                .defineInRange("gumWormMaxHealth", 150d, 1, 1000000);
+
+        GUM_WORM_ATTACK_DAMAGE = configBuilder
+                .defineInRange("gumWormAttackDamage", 10.0d, 1, 1000000);
+
+        GUM_WORM_ARMOR = configBuilder
+                .defineInRange("gumWormArmor", 9.0d, 0, 1000000);
+
         HULLBREAKER_MAX_HEALTH = configBuilder
                 .defineInRange("hullbreakerMaxHealth", 400d, 1, 1000000);
 
@@ -446,6 +515,12 @@ public class Config {
 
         LANTERNFISH_ARMOR = configBuilder
                 .defineInRange("lanternfishArmor", 0.0d, 0, 1000000);
+
+        LICOWITCH_MAX_HEALTH = configBuilder
+                .defineInRange("licowitchMaxHealth", 40d, 1, 1000000);
+
+        LICOWITCH_ATTACK_DAMAGE = configBuilder
+                .defineInRange("licowitchAttackDamage", 3.0d, 1, 1000000);
 
         LUXTRUCTOSAURUS_MAX_HEALTH = configBuilder
                 .defineInRange("luxtructosaurusMaxHealth", 600d, 1, 1000000);
@@ -518,6 +593,9 @@ public class Config {
 
         SEA_PIG_ARMOR = configBuilder
                 .defineInRange("seaPigArmor", 0.0d, 0, 1000000);
+
+        SWEETISH_FISH_MAX_HEALTH = configBuilder
+                .defineInRange("sweetishFishMaxHealth", 4d, 1, 1000000);
 
         SUBTERRANODON_MAX_HEALTH = configBuilder
                 .defineInRange("subterranodonMaxHealth", 20d, 1, 1000000);
@@ -648,6 +726,12 @@ public class Config {
 
         configBuilder.pop();
 
+        configBuilder.push("INTERNAL MARKERS (DO NOT EDIT)");
+
+        CONFIG_VERSION = configBuilder
+                .defineInRange("configVersion", 1, 1, 1000000);
+
+        configBuilder.pop();
 
         SPEC = configBuilder.build();
     }

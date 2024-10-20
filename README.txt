@@ -36,7 +36,7 @@ Adjustments done:
 
 - Added all Alex's Cave biomes to `minecraft:is_overworld` tag for compatibility with other mods and datapacks.
 
-- Added Forlorn Hollows, Magnetic Caves, Primordial Caves, and Toxic Caves to `forge:is_cave` for better mod compat.
+- Added Forlorn Hollows, Magnetic Caves, Primordial Caves, Toxic Caves, Candy Cavity to `forge:is_cave` for better mod compat.
 
 - Added Primordial Caves to `forge:is_lush`.
 

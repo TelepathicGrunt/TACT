@@ -28,6 +28,6 @@ logoBlur=false
 [[dependencies.${mod_id}]]
     modId="alexscaves"
     mandatory=true
-    versionRange="[1.1.0,)"
+    versionRange="[2.0.0,)"
     ordering="AFTER"
     side="BOTH"

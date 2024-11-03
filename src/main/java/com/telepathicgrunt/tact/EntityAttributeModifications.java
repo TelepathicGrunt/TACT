@@ -44,7 +44,7 @@ public class EntityAttributeModifications {
 
         event.add(ACEntityRegistry.CORRODENT.get(), Attributes.MAX_HEALTH, Config.CORRODENT_MAX_HEALTH.get());
         event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ATTACK_DAMAGE, Config.CORRODENT_ATTACK_DAMAGE.get());
-        event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ARMOR, Config.BOUNDROID_ARMOR.get());
+        event.add(ACEntityRegistry.CORRODENT.get(), Attributes.ARMOR, Config.CORRODENT_ARMOR.get());
 
         event.add(ACEntityRegistry.DEEP_ONE.get(), Attributes.MAX_HEALTH, Config.DEEP_ONE_MAX_HEALTH.get());
         event.add(ACEntityRegistry.DEEP_ONE.get(), Attributes.ATTACK_DAMAGE, Config.DEEP_ONE_ATTACK_DAMAGE.get());
@@ -140,7 +140,7 @@ public class EntityAttributeModifications {
         event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.ATTACK_DAMAGE, Config.SUBTERRANODON_ATTACK_DAMAGE.get());
         event.add(ACEntityRegistry.SUBTERRANODON.get(), Attributes.ARMOR, Config.SUBTERRANODON_ARMOR.get());
 
-        event.add(ACEntityRegistry.SWEETISH_FISH.get(), Attributes.MAX_HEALTH, Config.SUBTERRANODON_MAX_HEALTH.get());
+        event.add(ACEntityRegistry.SWEETISH_FISH.get(), Attributes.MAX_HEALTH, Config.SWEETISH_FISH_MAX_HEALTH.get());
 
         event.add(ACEntityRegistry.TELETOR.get(), Attributes.MAX_HEALTH, Config.TELETOR_MAX_HEALTH.get());
         event.add(ACEntityRegistry.TELETOR.get(), Attributes.ATTACK_DAMAGE, Config.TELETOR_ATTACK_DAMAGE.get());

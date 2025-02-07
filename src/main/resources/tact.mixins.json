@@ -7,6 +7,8 @@
     "BlockStateBaseAccessor",
     "CommonEventsMixin",
     "DarknessArmorItemMixin",
+    "DesolateDaggerEntityMixin",
+    "DesolateDaggerItemMixin",
     "DreadbowItemMixin",
     "ExtinctionSpearEntityMixin",
     "FerrouslimeEntityMixin",

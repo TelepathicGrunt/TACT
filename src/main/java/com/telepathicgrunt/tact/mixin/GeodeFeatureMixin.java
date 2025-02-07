@@ -18,7 +18,7 @@ public class GeodeFeatureMixin {
             at = @At(value = "HEAD"),
             cancellable = true
     )
-    private void repurposedstructures_noGeodesInStructures(FeaturePlaceContext<BlockStateConfiguration> context, CallbackInfoReturnable<Boolean> cir) {
+    private void tact_noGeodesInStructures(FeaturePlaceContext<BlockStateConfiguration> context, CallbackInfoReturnable<Boolean> cir) {
         if (context.level().getBiome(context.origin()).is(TACT.MANUALLY_CARVED)) {
             cir.setReturnValue(false);
         }

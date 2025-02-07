@@ -18,6 +18,9 @@ public class Config {
     public static final ForgeConfigSpec.ConfigValue<String> DREADBOW_ARROW_RAIN_OVERRIDES;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_USAGE_SPEED;
+    public static final ForgeConfigSpec.DoubleValue DESOLATE_DAGGERS_ABILITY_DELAY_MULTIPLIER;
+    public static final ForgeConfigSpec.DoubleValue DESOLATE_DAGGERS_ABILITY_BASE_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue DESOLATE_DAGGERS_ABILITY_IMPEDING_STAB_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue NUCLEAR_FURNACE_SMELTING_SPEED_MODIFIER;
 
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_MELEE_DAMAGE;
@@ -262,6 +265,35 @@ public class Config {
                      Putting 2 will deplete the meter twice as fast. Putting 0.5 will slow the meter's usage rate.
                     """)
                 .defineInRange("subterranodonFlightMeterUsageSpeed", 1D, 0, 1000);
+
+        configBuilder.push("Desolate Daggers Options");
+
+        DESOLATE_DAGGERS_ABILITY_DELAY_MULTIPLIER = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Multiplies the delay time for the floating dagger ability on Desolate Daggers.
+                     Doing 0.5 will halve the time for the ability.
+                    """)
+                .defineInRange("desolateDaggersAbilityDelay", 1D, 0, 10D);
+
+        DESOLATE_DAGGERS_ABILITY_BASE_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Base damage for the floating dagger ability on Desolate Daggers.
+                    """)
+                .defineInRange("desolateDaggersAbilityBaseDamage", 2D, 0, 1000000);
+
+        DESOLATE_DAGGERS_ABILITY_IMPEDING_STAB_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Extra damage per Impending Stable enchantment level for the floating dagger ability on Desolate Daggers.
+                    """)
+                .defineInRange("desolateDaggersAbilityImpendingStabDamage", 2D, 0, 1000000);
+
+        configBuilder.pop();
 
         configBuilder.push("Nuclear Furnace Options");
 

@@ -42,4 +42,4 @@ Adjustments done:
 
 - Added Tree Star, Fiddlehead, and Curly Fern to `minecraft:replaceable` tag so other mods know they can replace these blocks safely like they do for grass.
 
-
+- Added entity type tag `tact:primitive_club_stun_immune` that players/packmakers can add entities into so Primitive Club cannot stun them.

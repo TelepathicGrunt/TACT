@@ -1,7 +1,4 @@
-### **(V.1.2.3 Changes) (1.20.1 Minecraft)**
+### **(V.1.3.0 Changes) (1.20.1 Minecraft)**
 
-#### Misc:
-Fix startup crash
-
-#### Configs:
-Added configs for Desolate Dagger's ability delay and damage.
+#### Items:
+Added entity type tag `tact:primitive_club_stun_immune` that players/packmakers can add entities into so Primitive Club cannot stun them.

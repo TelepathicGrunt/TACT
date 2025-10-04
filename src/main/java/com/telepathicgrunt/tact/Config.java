@@ -22,6 +22,8 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue DESOLATE_DAGGERS_ABILITY_BASE_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue DESOLATE_DAGGERS_ABILITY_IMPEDING_STAB_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue NUCLEAR_FURNACE_SMELTING_SPEED_MODIFIER;
+    public static final ForgeConfigSpec.BooleanValue GOBTHUMPER_SPAWNS_WORMS_FROM_CANDY_CAVITY_BIOME;
+    public static final ForgeConfigSpec.BooleanValue GOBTHUMPER_DISABLE_WORM_SPAWNING;
 
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_MELEE_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_THROWN_DAMAGE;
@@ -306,6 +308,28 @@ public class Config {
                      Lower number means faster smelting. Higher number means slower.
                     """)
                 .defineInRange("nuclearFurnaceSmeltingSpeedModifier", 1D, 0, 1000000);
+
+        configBuilder.pop();
+
+        configBuilder.push("Gobthumper Options");
+
+        GOBTHUMPER_SPAWNS_WORMS_FROM_CANDY_CAVITY_BIOME = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Will only spawn a Gum Worm in a Candy Cavity biome.
+                     Attracting nearby Gum Worm behavior is unchanged.
+                    """)
+                .define("gobthumperSpawnsWormsFromCandyCavityBiome", false);
+
+        GOBTHUMPER_DISABLE_WORM_SPAWNING = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Disabled the Gum Worm spawning ability of Gobthumper.
+                     Attracting nearby Gum Worm behavior is unchanged.
+                    """)
+                .define("gobthumperDisableWormSpawning", false);
 
         configBuilder.pop();
 

@@ -43,3 +43,8 @@ Adjustments done:
 - Added Tree Star, Fiddlehead, and Curly Fern to `minecraft:replaceable` tag so other mods know they can replace these blocks safely like they do for grass.
 
 - Added entity type tag `tact:primitive_club_stun_immune` that players/packmakers can add entities into so Primitive Club cannot stun them.
+
+- Added config option to allow eating Biome Treat even when not hungry. This is more due to when other mods overhaul hunger system and accidentally causes Biome Treat to be uneatable with default behavior. This config is a workaround for that.
+
+- Added config to make Gobthumpers spawn Gum Worms from Candy Cavity biome. Also has an option to disable Gobthumpers's Gum Worm spawning ability entirely. Gobthumpers will still attract nearby existing Gum Worms.
+

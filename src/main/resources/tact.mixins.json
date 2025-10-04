@@ -15,6 +15,7 @@
     "FerrouslimeEntityMixin",
     "ForsakenEntityMixin",
     "GeodeFeatureMixin",
+    "GobthumperBlockEntityMixin",
     "ItemAccessor",
     "LuxtructosaurusEntityMixin",
     "MagnetronEntityMixin",

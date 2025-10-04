@@ -28,6 +28,7 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue RAYGUN_NORMAL_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue RAYGUN_GAMMA_DAMAGE;
     public static final ForgeConfigSpec.BooleanValue ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT;
+    public static final ForgeConfigSpec.BooleanValue CAN_EAT_BIOME_TREAT_WHEN_NOT_HUNGRY;
 
     public static final ForgeConfigSpec.DoubleValue ATLATITAN_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue ATLATITAN_ATTACK_DAMAGE;
@@ -317,6 +318,19 @@ public class Config {
                      Whether Cloak of Darkness's ability should be usable anywhere. Including in bright light or sunlight.
                     """)
                 .define("AllowedCloakOfDarknessAbilityInLight",  false);
+
+        configBuilder.pop();
+
+        configBuilder.push("Biome Treat Options");
+
+        CAN_EAT_BIOME_TREAT_WHEN_NOT_HUNGRY = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Whether Biome Treat can be eaten while player is not hungry.
+                     Might help allowing Biome Treat to be eaten when hunger overhaul mods are on.
+                    """)
+                .define("CanEatBiomeTreatWhenNotHungry",  false);
 
         configBuilder.pop();
 

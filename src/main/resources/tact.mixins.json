@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "tact.refmap.json",
   "mixins": [
+    "BiomeTreatItemMixin",
     "BlockStateBaseAccessor",
     "CommonEventsMixin",
     "DarknessArmorItemMixin",

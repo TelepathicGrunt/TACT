@@ -1,3 +1,9 @@
+### **(V.1.5.0 Changes) (1.20.1 Minecraft)**
+
+#### Items:
+Added `tact:radioactive_and_acid_resistant_armor` item tag to allow specifying other mod's armor that should give resistance to radiation and acid.
+
+
 ### **(V.1.4.0 Changes) (1.20.1 Minecraft)**
 
 #### Items:

@@ -16,6 +16,7 @@
     "ForsakenEntityMixin",
     "GeodeFeatureMixin",
     "GobthumperBlockEntityMixin",
+    "HazmatArmorItemMixin",
     "ItemAccessor",
     "LuxtructosaurusEntityMixin",
     "MagnetronEntityMixin",

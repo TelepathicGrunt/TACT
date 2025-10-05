@@ -4,9 +4,12 @@ import com.github.alexmodguy.alexscaves.AlexsCaves;
 import com.google.common.base.Suppliers;
 import com.telepathicgrunt.tact.mixin.BlockStateBaseAccessor;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -16,6 +19,7 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 public class BlockModifications {
+    public static ResourceKey<Biome> CANDY_CAVITY_BIOME_KEY = ResourceKey.create(Registries.BIOME, new ResourceLocation(TACT.ALEXS_CAVES_MODID, "candy_cavity"));
 
     static void doModifications(final FMLCommonSetupEvent event) {
         if (Config.REPLACEABLE_SMALL_PLANTS.get()) {

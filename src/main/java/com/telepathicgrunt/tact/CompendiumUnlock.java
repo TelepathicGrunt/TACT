@@ -15,7 +15,7 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 public class CompendiumUnlock {
 
     private static final TagKey<Biome> ALEXS_CAVES_BIOME_TAG =
-            TagKey.create(Registries.BIOME, new ResourceLocation("alexscaves", "alexs_caves_biomes"));
+            TagKey.create(Registries.BIOME, new ResourceLocation(TACT.ALEXS_CAVES_MODID, "alexs_caves_biomes"));
 
     public static void playerLoggedIn(final PlayerEvent.PlayerLoggedInEvent event) {
         if (!Config.UNLOCK_ALL_COMPENDIUM_INFO.get()) {

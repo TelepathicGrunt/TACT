@@ -25,6 +25,7 @@
     "NuclearFurnaceBlockEntityMixin",
     "PrimitiveClubItemMixin",
     "RaygunItemMixin",
+    "ResizeEventFixMixin",
     "SpearItemAccessor",
     "SubterranodonEntityMixin",
     "TremorsaurusEntityMixin",

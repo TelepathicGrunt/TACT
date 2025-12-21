@@ -2,4 +2,4 @@
 
 #### BugFix:
 Attempt to resolve the event listener load order issue that Alex's Cave has with DragonSurvival and Pehkui.
-I cancelled Alex's Caves event and resubscribed the logic myself using lowest event priority so it always runs last.
+I cancelled Alex's Caves event and resubscribed the logic myself using highest event priority so it always runs first as well as some logic adjustment in the event itself.

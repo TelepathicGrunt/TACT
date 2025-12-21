@@ -35,7 +35,7 @@ public class TACT {
         forgeBus.addListener(EventPriority.LOWEST, ItemModifications::stunEffectAdjustment);
         forgeBus.addListener(CompendiumUnlock::playerLoggedIn);
         forgeBus.addListener(BlockModifications::burnTimeModifications);
-        forgeBus.addListener(EventPriority.LOWEST, ResizeBugFix::resizeEntity);
+        forgeBus.addListener(EventPriority.HIGHEST, ResizeBugFix::resizeEntity);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

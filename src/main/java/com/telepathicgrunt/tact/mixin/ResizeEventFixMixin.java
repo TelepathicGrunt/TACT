@@ -13,8 +13,7 @@ public abstract class ResizeEventFixMixin {
     @Inject(method = "resizeEntity(Lnet/minecraftforge/event/entity/EntityEvent$Size;)V",
             at = @At(value = "HEAD"),
             cancellable = true,
-            remap = false,
-            require = 0)
+            remap = false)
     private void tact_configurableBiomeTreatEating(EntityEvent.Size event, CallbackInfo ci) {
         ci.cancel();
     }

@@ -24,16 +24,30 @@ public class VallumraptorEntityMixin {
     }
 
     @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;setBaseValue(D)V", ordinal = 3),
+            require = 0)
+    private double tact_elderMaxArmor1(double maxArmor) {
+        return (Config.VALLUMRAPTOR_ARMOR.get() * (4d / 3d)) + 5;
+    }
+
+    @ModifyArg(method = "tick()V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;setBaseValue(D)V", ordinal = 4),
             require = 0)
     private double tact_elderMaxHealth2(double maxHealth) {
-        return Config.VALLUMRAPTOR_MAX_HEALTH.get() * (7d / 6d);
+        return Config.VALLUMRAPTOR_MAX_HEALTH.get();
     }
 
     @ModifyArg(method = "tick()V",
             at = @At(value = "INVOKE", target = "Lcom/github/alexmodguy/alexscaves/server/entity/living/VallumraptorEntity;heal(F)V", ordinal = 1),
             require = 0)
     private float tact_elderHeal2(float healAmount) {
-        return (float) (Config.VALLUMRAPTOR_MAX_HEALTH.get() * (7d / 6d));
+        return Config.VALLUMRAPTOR_MAX_HEALTH.get().floatValue();
+    }
+
+    @ModifyArg(method = "tick()V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/attributes/AttributeInstance;setBaseValue(D)V", ordinal = 5),
+            require = 0)
+    private double tact_elderMaxArmor2(double maxArmor) {
+        return Config.VALLUMRAPTOR_ARMOR.get();
     }
 }

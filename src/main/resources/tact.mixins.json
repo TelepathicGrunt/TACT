@@ -19,6 +19,7 @@
     "HazmatArmorItemMixin",
     "ItemAccessor",
     "LuxtructosaurusEntityMixin",
+    "LuxtructosaurusMeleeGoalMixin",
     "MagnetronEntityMixin",
     "MobEffectInstanceAccessor",
     "NuclearFurnaceBlockEntityAccessor",

@@ -100,6 +100,7 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_ARMOR;
     public static final ForgeConfigSpec.DoubleValue LUXTRUCTOSAURUS_FIRE_BREATH_ATTACK_DAMAGE;
+    public static final ForgeConfigSpec.BooleanValue LUXTRUCTOSAURUS_DISABLE_JUMP;
     public static final ForgeConfigSpec.DoubleValue MAGNETRON_MAX_HEALTH;
     public static final ForgeConfigSpec.DoubleValue MAGNETRON_ATTACK_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue MAGNETRON_ARMOR;
@@ -603,6 +604,9 @@ public class Config {
 
         LUXTRUCTOSAURUS_FIRE_BREATH_ATTACK_DAMAGE = configBuilder
                 .defineInRange("luxtructosaurusFireBreathAttackDamage", 3.0d, 1, 1000000);
+
+        LUXTRUCTOSAURUS_DISABLE_JUMP = configBuilder
+                .define("luxtructosaurusDisableJump", false);
 
         MAGNETRON_MAX_HEALTH = configBuilder
                 .defineInRange("magnetronMaxHealth", 30d, 1, 1000000);

@@ -1,7 +1,6 @@
 package com.telepathicgrunt.tact.mixin;
 
 import com.github.alexmodguy.alexscaves.server.event.CommonEvents;
-import com.github.alexmodguy.alexscaves.server.item.DarknessArmorItem;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.telepathicgrunt.tact.Config;

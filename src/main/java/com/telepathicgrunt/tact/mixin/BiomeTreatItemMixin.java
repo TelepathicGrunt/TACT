@@ -3,12 +3,10 @@ package com.telepathicgrunt.tact.mixin;
 import com.github.alexmodguy.alexscaves.server.item.BiomeTreatItem;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.llamalad7.mixinextras.sugar.Local;
 import com.telepathicgrunt.tact.Config;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(BiomeTreatItem.class)
 public abstract class BiomeTreatItemMixin {

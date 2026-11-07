@@ -1,6 +1,5 @@
 package com.telepathicgrunt.tact;
 
-import com.github.alexmodguy.alexscaves.server.item.CaveInfoItem;
 import com.github.alexmodguy.alexscaves.server.misc.CaveBookProgress;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;

@@ -1,7 +1,6 @@
 package com.telepathicgrunt.tact.mixin;
 
 import com.github.alexmodguy.alexscaves.server.entity.living.FerrouslimeEntity;
-import com.github.alexmodguy.alexscaves.server.entity.living.VallumraptorEntity;
 import com.telepathicgrunt.tact.Config;
 import net.minecraft.util.Mth;
 import org.spongepowered.asm.mixin.Mixin;

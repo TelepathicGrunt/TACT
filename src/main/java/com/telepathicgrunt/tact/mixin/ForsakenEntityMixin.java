@@ -1,15 +1,12 @@
 package com.telepathicgrunt.tact.mixin;
 
 import com.github.alexmodguy.alexscaves.server.entity.living.ForsakenEntity;
-import com.github.alexmodguy.alexscaves.server.entity.living.TremorsaurusEntity;
 import com.telepathicgrunt.tact.Config;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(ForsakenEntity.class)

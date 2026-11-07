@@ -2,19 +2,11 @@ package com.telepathicgrunt.tact.mixin;
 
 import com.github.alexmodguy.alexscaves.server.entity.item.DesolateDaggerEntity;
 import com.github.alexmodguy.alexscaves.server.item.DesolateDaggerItem;
-import com.github.alexmodguy.alexscaves.server.item.DreadbowItem;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.telepathicgrunt.tact.Config;
-import com.telepathicgrunt.tact.DreadbowRainAttackModification;
-import com.telepathicgrunt.tact.TACT;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DesolateDaggerItem.class)

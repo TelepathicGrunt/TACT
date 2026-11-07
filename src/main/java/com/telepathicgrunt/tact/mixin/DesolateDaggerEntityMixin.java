@@ -1,15 +1,10 @@
 package com.telepathicgrunt.tact.mixin;
 
 import com.github.alexmodguy.alexscaves.server.entity.item.DesolateDaggerEntity;
-import com.github.alexmodguy.alexscaves.server.item.DesolateDaggerItem;
-import com.llamalad7.mixinextras.sugar.Local;
 import com.telepathicgrunt.tact.Config;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DesolateDaggerEntity.class)
 public abstract class DesolateDaggerEntityMixin {

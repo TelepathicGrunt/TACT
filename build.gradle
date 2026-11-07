@@ -1,138 +1,151 @@
-buildscript {
-    repositories {
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-    }
-    dependencies {
-        classpath 'org.spongepowered:mixingradle:0.7.+'
-        classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.4.0"
-    }
-}
-
 plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id "net.darkhax.curseforgegradle" version "1.0.7"
-    id "com.modrinth.minotaur" version "2.+"
+    id 'me.modmuss50.mod-publish-plugin' version '2.0.0-beta.2'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.88'
 }
 
-apply plugin: 'org.spongepowered.mixin'
+version = "${project.mod_version}+${project.minecraft_version}"
+group = project.mod_group_id
 
-version = "${mod_version}+${minecraft_version}"
-group = mod_group_id
-
-base {
-    archivesName = mod_id
-}
-
-jarJar.enable()
-
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
-println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
-minecraft {
-    mappings channel: mapping_channel, version: mapping_version
-
-    copyIdeResources = true
-
-    runs {
-        all {
-            workingDirectory project.file('run')
-            arg "-mixin.config=" + project.getProperty('mod_id') + ".mixins.json"
-            mods {
-                tact {
-                    source sourceSets.main
-                }
-            }
-        }
-        client {}
-        server {}
+// IDEA no longer automatically downloads sources/javadoc jars for dependencies, so we need to explicitly enable the behavior.
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
-
 repositories {
+    maven {
+        url = 'https://maven.fabricmc.net'
+    }
     maven {
         url = 'https://www.cursemaven.com'
         content {
             includeGroup 'curse.maven'
         }
     }
-    maven {
-        url = 'https://nexus.resourcefulbees.com/repository/maven-public/'
-        content {
-            includeGroup 'com.telepathicgrunt'
+}
+
+dependencies {
+    compileOnly("org.spongepowered:mixin:${project.mixin_version}")
+    annotationProcessor('net.fabricmc:sponge-mixin:0.13.0+mixin.0.8.5')
+    annotationProcessor("io.github.llamalad7:mixinextras-common:${project.mixin_extras_version}")
+    compileOnly("io.github.llamalad7:mixinextras-common:${project.mixin_extras_version}")
+    implementation("io.github.llamalad7:mixinextras-forge:${project.mixin_extras_version}")
+    jarJar("io.github.llamalad7:mixinextras-forge:${project.mixin_extras_version}")
+
+    modImplementation(modRuntimeOnly("curse.maven:alexs-caves-924854:5848216"))
+    modImplementation(modRuntimeOnly("curse.maven:citadel-331936:6702068"))
+}
+
+legacyForge {
+    version = "${minecraft_version}-${forge_version}"
+
+    runs {
+        client {
+            client()
+            systemProperty 'mixin.env.remapRefMap', 'true'
+            systemProperty 'mixin.env.refMapRemappingFile', project.layout.buildDirectory.get().file('createSrgToMcp/output.srg').asFile.absolutePath
+        }
+
+        server {
+            server()
+            systemProperty 'mixin.env.remapRefMap', 'true'
+            systemProperty 'mixin.env.refMapRemappingFile', project.layout.buildDirectory.get().file('createSrgToMcp/output.srg').asFile.absolutePath
+        }
+    }
+    mods {
+        modServerRun {
+            sourceSet sourceSets.main
         }
     }
 }
 
-dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-
-    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:${project.mixin_extras_version}"))
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:${project.mixin_extras_version}")) {
-        jarJar.ranged(it, "[${project.mixin_extras_version},)")
-    }
-
-    implementation(runtimeOnly(fg.deobf("curse.maven:alexs-caves-924854:5848216")))
-    implementation(runtimeOnly(fg.deobf("curse.maven:citadel-331936:6702068")))
-
-    //runtimeOnly fg.deobf("com.telepathicgrunt:CommandStructures-Forge:4.1.0+1.20.1")
-    //runtimeOnly fg.deobf("com.telepathicgrunt:StructureVoidToggle-Forge:4.2.6+1.20.1")
-}
-
-tasks.named('processResources', ProcessResources).configure {
-    var replaceProperties = [
-            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
-            forge_version: forge_version, forge_version_range: forge_version_range,
-            loader_version_range: loader_version_range,
-            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-            mod_authors: mod_authors, mod_description: mod_description,
-    ]
-    inputs.properties replaceProperties
-
-    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-        expand replaceProperties + [project: project]
-    }
-}
-
 mixin {
-    add sourceSets.main, "${mod_id}.refmap.json"
+    add(sourceSets.main, "${mod_id}.refmap.json")
+
+    config("${mod_id}.mixins.json")
 }
 
-jar.finalizedBy('reobfJar')
+processResources {
+    filteringCharset "UTF-8"
 
-tasks.jarJar.configure {
-    archiveClassifier = ''
+    def expandProps = [
+            minecraft_version: minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            forge_version: forge_version,
+            forge_version_range: forge_version_range,
+            loader_version_range: loader_version_range,
+            mod_id: mod_id,
+            mod_name: mod_name,
+            mod_license: mod_license,
+            mod_version: mod_version,
+            mod_authors: mod_authors,
+            mod_description: mod_description,
+    ]
+
+    filesMatching(['pack.mcmeta', '*.mod.json', 'META-INF/mods.toml', '*.mixins.json']) {
+        expand expandProps
+    }
+    inputs.properties(expandProps)
 }
 
-tasks.named('jar', Jar).configure {
-    archiveClassifier = '-slim'
+def javaVersion = 17
+java {
+    if (JavaVersion.current() < JavaVersion.toVersion(javaVersion)) {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(javaVersion)
+        }
+    } else {
+        sourceCompatibility = JavaVersion.toVersion(javaVersion)
+        targetCompatibility = JavaVersion.toVersion(javaVersion)
+    }
+
+    withSourcesJar()
+//        withJavadocJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release.set(javaVersion)
+}
+
+javadoc {
+    // make javadoc not throw on mixin's '@reason'
+    options.tags = ["reason"]
+}
+
+jar {
+    def licenseFile = project.file("LICENSE.txt")
+    inputs.file(licenseFile)
+
+    from(licenseFile) {
+        rename { "LICENSE_${project.mod_id}.txt" }
+    }
 
     manifest {
         attributes([
-                'Specification-Title'     : mod_id,
-                'Specification-Vendor'    : mod_authors,
-                'Specification-Version'   : '1', // We are version 1 of ourselves
-                'Implementation-Title'    : project.name,
-                'Implementation-Version'  : project.jar.archiveVersion,
-                'Implementation-Vendor'   : mod_authors,
-                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs"            : "${mod_id}.mixins.json"
+            "MixinConfigs": "${project.mod_id}.mixins.json"
         ])
     }
+}
 
-    // This is the preferred method to reobfuscate your jar file
-    finalizedBy 'reobfJar'
+sourcesJar {
+    def licenseFile = project.file("LICENSE.txt")
+    inputs.file(licenseFile)
+
+    from(licenseFile) {
+        rename { "LICENSE_${project.mod_id}.txt" }
+    }
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            artifactId "${project.mod_id}"
+            from components.java
 
             pom {
                 name = 'TACT'
@@ -174,19 +187,33 @@ publishing {
     }
 }
 
-String changelogText = file("CHANGELOG.md").getText('UTF-8')
-task publishCurseForge(type: net.darkhax.curseforgegradle.TaskPublishCurseForge) {
-    apiToken = "$System.env.CURSEFORGEKEY"
-    int projectId = 926263
+publishMods {
+    file = tasks.reobfJar.archiveFile
+    type = STABLE
 
-    def mainFile = upload(projectId, tasks.jarJar.archiveFile)
-    mainFile.changelog = changelogText
-    mainFile.addGameVersion("1.20.1")
-    mainFile.changelogType = "markdown"
-    mainFile.releaseType = "release"
-    mainFile.displayName = "TACT v${project.mod_version} (${project.minecraft_version} MC)"
+    displayName = "TACT v${project.mod_version} (${project.minecraft_version} MC)"
+    version = "${project.mod_version}+${project.minecraft_version}"
 
-    mainFile.addRequirement("alexs-caves")
+    if (project.hasProperty('curseforge_id')) {
+        curseforge('CurseforgeForge') {
+            accessToken = providers.environmentVariable('CURSEFORGEKEY')
+            projectId = project.findProperty('curseforge_id')
+
+            minecraftVersions.add(project.minecraft_version)
+            modLoaders.add("forge")
+            client = true
+            server = true
+
+            File changeLog = project.file("CHANGELOG.md")
+            changelog =  changeLog.exists() ? changeLog.text : ""
+
+            requires("alexs-caves")
+        }
+    }
+}
+
+tasks.named('wrapper', Wrapper).configure {
+    distributionType = Wrapper.DistributionType.BIN
 }
 
 task checkForRefmap() {
@@ -196,8 +223,9 @@ task checkForRefmap() {
     }
 }
 
-task buildAndRelease{}
+tasks.register('buildAndRelease') {
+    dependsOn(tasks.build, tasks.checkForRefmap, tasks.publish, tasks.publishMods)
+}
 tasks.checkForRefmap.mustRunAfter tasks.build
 tasks.publish.mustRunAfter tasks.checkForRefmap
-tasks.publishCurseForge.mustRunAfter tasks.publish
-tasks.buildAndRelease.dependsOn(tasks.build, tasks.publish, tasks.publishCurseForge)
+tasks.publishMods.mustRunAfter tasks.publish

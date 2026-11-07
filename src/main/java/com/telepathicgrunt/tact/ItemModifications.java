@@ -11,7 +11,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -48,17 +47,23 @@ public class ItemModifications {
     }
 
     static void doItemAttributeModifications(final FMLCommonSetupEvent event) {
-        Multimap<Attribute, AttributeModifier> extinctionSpearAttributes = ACItemRegistry.EXTINCTION_SPEAR.get().getDefaultAttributeModifiers(EquipmentSlot.MAINHAND);
-        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        changeDefaultMeleeDamageForSpearItem(ACItemRegistry.EXTINCTION_SPEAR.get(), Config.EXTINCTION_SPEAR_MELEE_DAMAGE.get().floatValue());
+        changeDefaultMeleeDamageForSpearItem(ACItemRegistry.LIMESTONE_SPEAR.get(), Config.LIMESTONE_SPEAR_MELEE_DAMAGE.get().floatValue());
+        changeDefaultMeleeDamageForSpearItem(ACItemRegistry.FROSTMINT_SPEAR.get(), Config.FROSTMINT_SPEAR_MELEE_DAMAGE.get().floatValue());
+    }
+
+    private static void changeDefaultMeleeDamageForSpearItem(Item item, float configValue) {
+        Multimap<Attribute, AttributeModifier> extinctionSpearAttributes = item.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND);
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder1 = ImmutableMultimap.builder();
         for (Map.Entry<Attribute, AttributeModifier> modifier : extinctionSpearAttributes.entries()) {
             if (modifier.getKey() == Attributes.ATTACK_DAMAGE && modifier.getValue().getId().equals(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID())) {
-                builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID(), "Tool modifier", Config.EXTINCTION_SPEAR_MELEE_DAMAGE.get().floatValue(), AttributeModifier.Operation.ADDITION));
+                builder1.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID(), "Tool modifier", configValue, AttributeModifier.Operation.ADDITION));
             }
             else {
-                builder.put(modifier);
+                builder1.put(modifier);
             }
         }
-        ((SpearItemAccessor)ACItemRegistry.EXTINCTION_SPEAR.get()).setDefaultModifiers(builder.build());
+        ((SpearItemAccessor) item).setDefaultModifiers(builder1.build());
     }
 
     public static int howManyEquippedRadioactiveOrAcidResistantArmorOnEntity(final LivingEntity entity) {

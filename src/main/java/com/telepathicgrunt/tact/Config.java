@@ -27,8 +27,13 @@ public class Config {
 
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_MELEE_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_THROWN_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue FROSTMINT_SPEAR_MELEE_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue FROSTMINT_SPEAR_THROWN_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue LIMESTONE_SPEAR_MELEE_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue LIMESTONE_SPEAR_THROWN_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue RAYGUN_NORMAL_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue RAYGUN_GAMMA_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue SHOT_GUM_GUMBALL_DAMAGE;
     public static final ForgeConfigSpec.BooleanValue ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT;
     public static final ForgeConfigSpec.BooleanValue CAN_EAT_BIOME_TREAT_WHEN_NOT_HUNGRY;
 
@@ -379,6 +384,46 @@ public class Config {
 
         configBuilder.pop();
 
+        configBuilder.push("Frostmint Spear Options");
+
+        FROSTMINT_SPEAR_MELEE_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for melee attack with Frostmint Spear.
+                    """)
+                .defineInRange("frostmintSpearMeleeDamage", 5D, 0, 10000);
+
+        FROSTMINT_SPEAR_THROWN_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for ranged attack with Frostmint Spear.
+                    """)
+                .defineInRange("frostmintSpearRangedDamage", 6D, 0, 10000);
+
+        configBuilder.pop();
+
+        configBuilder.push("Limestone Spear Options");
+
+        LIMESTONE_SPEAR_MELEE_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for melee attack with Limestone Spear.
+                    """)
+                .defineInRange("limestoneSpearMeleeDamage", 3D, 0, 10000);
+
+        LIMESTONE_SPEAR_THROWN_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for ranged attack with Limestone Spear.
+                    """)
+                .defineInRange("limestoneSpearRangedDamage", 4D, 0, 10000);
+
+        configBuilder.pop();
+
         configBuilder.push("Raygun Options");
 
         RAYGUN_NORMAL_DAMAGE = configBuilder
@@ -396,6 +441,18 @@ public class Config {
                      Rate of damage for Raygun when gamma enchanted.
                     """)
                 .defineInRange("raygunGammaDamage", 2.0D, 0, 1000);
+
+        configBuilder.pop();
+
+        configBuilder.push("Shot Gum Options");
+
+        SHOT_GUM_GUMBALL_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for Gumball projectiles from Shot Gum.
+                    """)
+                .defineInRange("shotGumGumballDamage", 4.0D, 0, 1000);
 
         configBuilder.pop();
 

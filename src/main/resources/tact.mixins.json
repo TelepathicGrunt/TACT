@@ -26,15 +26,19 @@
     "MobEffectInstanceAccessor",
     "NuclearFurnaceBlockEntityAccessor",
     "NuclearFurnaceBlockEntityMixin",
+    "OrtholanceItemAccessor",
     "PrimitiveClubItemMixin",
     "RaygunItemMixin",
     "ResizeEventFixMixin",
     "ShotGumItemMixin",
     "SpearItemAccessor",
+    "SpinningPeppermintEntityMixin",
     "SubterranodonEntityMixin",
     "TremorsaurusEntityMixin",
     "TremorzillaEntityMixin",
-    "VallumraptorEntityMixin"
+    "VallumraptorEntityMixin",
+    "WaterBoltEntityMixin",
+    "WaveEntityMixin"
   ],
   "client": [],
   "injectors": {

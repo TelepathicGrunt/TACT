@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.telepathicgrunt.tact.mixin.ItemAccessor;
 import com.telepathicgrunt.tact.mixin.MobEffectInstanceAccessor;
+import com.telepathicgrunt.tact.mixin.OrtholanceItemAccessor;
 import com.telepathicgrunt.tact.mixin.SpearItemAccessor;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -50,12 +51,13 @@ public class ItemModifications {
         changeDefaultMeleeDamageForSpearItem(ACItemRegistry.EXTINCTION_SPEAR.get(), Config.EXTINCTION_SPEAR_MELEE_DAMAGE.get().floatValue());
         changeDefaultMeleeDamageForSpearItem(ACItemRegistry.LIMESTONE_SPEAR.get(), Config.LIMESTONE_SPEAR_MELEE_DAMAGE.get().floatValue());
         changeDefaultMeleeDamageForSpearItem(ACItemRegistry.FROSTMINT_SPEAR.get(), Config.FROSTMINT_SPEAR_MELEE_DAMAGE.get().floatValue());
+        changeDefaultMeleeDamageForOrtholanceItem(ACItemRegistry.ORTHOLANCE.get(), Config.ORTHOLANCE_MELEE_DAMAGE.get().floatValue());
     }
 
     private static void changeDefaultMeleeDamageForSpearItem(Item item, float configValue) {
-        Multimap<Attribute, AttributeModifier> extinctionSpearAttributes = item.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND);
+        Multimap<Attribute, AttributeModifier> spearAttributes = item.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder1 = ImmutableMultimap.builder();
-        for (Map.Entry<Attribute, AttributeModifier> modifier : extinctionSpearAttributes.entries()) {
+        for (Map.Entry<Attribute, AttributeModifier> modifier : spearAttributes.entries()) {
             if (modifier.getKey() == Attributes.ATTACK_DAMAGE && modifier.getValue().getId().equals(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID())) {
                 builder1.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID(), "Tool modifier", configValue, AttributeModifier.Operation.ADDITION));
             }
@@ -64,6 +66,20 @@ public class ItemModifications {
             }
         }
         ((SpearItemAccessor) item).setDefaultModifiers(builder1.build());
+    }
+
+    private static void changeDefaultMeleeDamageForOrtholanceItem(Item item, float configValue) {
+        Multimap<Attribute, AttributeModifier> ortholanceAttributes = item.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND);
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder1 = ImmutableMultimap.builder();
+        for (Map.Entry<Attribute, AttributeModifier> modifier : ortholanceAttributes.entries()) {
+            if (modifier.getKey() == Attributes.ATTACK_DAMAGE && modifier.getValue().getId().equals(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID())) {
+                builder1.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ItemAccessor.getBASE_ATTACK_DAMAGE_UUID(), "Tool modifier", configValue, AttributeModifier.Operation.ADDITION));
+            }
+            else {
+                builder1.put(modifier);
+            }
+        }
+        ((OrtholanceItemAccessor) item).setDefaultModifiers(builder1.build());
     }
 
     public static int howManyEquippedRadioactiveOrAcidResistantArmorOnEntity(final LivingEntity entity) {

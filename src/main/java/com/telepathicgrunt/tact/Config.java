@@ -15,7 +15,6 @@ public class Config {
     public static final ForgeConfigSpec.IntValue PRIMITIVE_CLUB_RANDOM_EXTRA_STUN_TIME;
     public static final ForgeConfigSpec.BooleanValue RESTORE_END_STORY;
     public static final ForgeConfigSpec.BooleanValue UNLOCK_ALL_COMPENDIUM_INFO;
-    public static final ForgeConfigSpec.ConfigValue<String> DREADBOW_ARROW_RAIN_OVERRIDES;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED;
     public static final ForgeConfigSpec.DoubleValue SUBTERRANODON_FLIGHT_METER_USAGE_SPEED;
     public static final ForgeConfigSpec.DoubleValue DESOLATE_DAGGERS_ABILITY_DELAY_MULTIPLIER;
@@ -24,7 +23,17 @@ public class Config {
     public static final ForgeConfigSpec.DoubleValue NUCLEAR_FURNACE_SMELTING_SPEED_MODIFIER;
     public static final ForgeConfigSpec.BooleanValue GOBTHUMPER_SPAWNS_WORMS_FROM_CANDY_CAVITY_BIOME;
     public static final ForgeConfigSpec.BooleanValue GOBTHUMPER_DISABLE_WORM_SPAWNING;
+    public static final ForgeConfigSpec.DoubleValue WATER_BOLT_PLAYER_OWNER_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue WATER_BOLT_MOB_OWNER_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue WAVE_ENTITY_PLAYER_OWNER_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue WAVE_ENTITY_MOB_OWNER_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue SPINNING_PEPPERMINT_PLAYER_OWNER_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue SPINNING_PEPPERMINT_MOB_OWNER_DAMAGE;
 
+    public static final ForgeConfigSpec.ConfigValue<String> DREADBOW_ARROW_RAIN_OVERRIDES;
+    public static final ForgeConfigSpec.DoubleValue DREADBOW_DARK_NORMAL_ARROW_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue DREADBOW_DARK_PRECISE_ARROW_DAMAGE;
+    public static final ForgeConfigSpec.DoubleValue ORTHOLANCE_MELEE_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_MELEE_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue EXTINCTION_SPEAR_THROWN_DAMAGE;
     public static final ForgeConfigSpec.DoubleValue FROSTMINT_SPEAR_MELEE_DAMAGE;
@@ -243,20 +252,6 @@ public class Config {
                     """)
                 .define("unlockAllCompendiumInfo", false);
 
-        DREADBOW_ARROW_RAIN_OVERRIDES = configBuilder
-                .comment("""
-                    ----------------------------------
-                    
-                     Allows setting overrides for how many arrows to spawn with Dreadbow's rain-like attack.
-                     Format is the arrow item registry name. Then an equal sign =. And ends with the arrow amount.
-                     Separate multiple entries with a comma , and whitespace will be ignored.
-                     Example: "alexscaves:seeking_arrow=5, alexscaves:burrowing_arrow=100"
-                    
-                     Otherwise, will default to Alex's Caves original code for determining arrow amount for
-                     the attack which is 30 arrows for dark colored arrows and 5 arrows for all other arrows.
-                    """)
-                .define("dreadbowArrowRainOverrides", "");
-
         SUBTERRANODON_FLIGHT_METER_RECHARGE_SPEED = configBuilder
                 .comment("""
                     ----------------------------------
@@ -339,6 +334,66 @@ public class Config {
 
         configBuilder.pop();
 
+        configBuilder.push("Water Bolt Options");
+
+        WATER_BOLT_PLAYER_OWNER_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How much damage Water Bolt will deal if spawned by Player (such as using Sea Staff item)
+                    """)
+                .defineInRange("waterBoltPlayerOwnerDamage", 3.0D, 0, 1000000);
+
+        WATER_BOLT_MOB_OWNER_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How much damage Water Bolt will deal if spawned by a mob (such as Deep One Mage mob)
+                    """)
+                .defineInRange("waterBoltMobOwnerDamage", 3.0D, 0, 1000000);
+
+        configBuilder.pop();
+
+        configBuilder.push("Wave Entity Options");
+
+        WAVE_ENTITY_PLAYER_OWNER_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How much should Wave Entity's regular damage be scaled if spawned by Player (such as using Ortholance item)
+                    """)
+                .defineInRange("waveEntityPlayerOwnerDamage", 1.0D, 0, 1000000);
+
+        WAVE_ENTITY_MOB_OWNER_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How much should Wave Entity's regular damage be scaled if spawned by a mob (such as Deep One Mage mob)
+                    """)
+                .defineInRange("waveEntityMobOwnerDamage", 1.0D, 0, 1000000);
+
+        configBuilder.pop();
+
+        configBuilder.push("Spinning Peppermint Options");
+
+        SPINNING_PEPPERMINT_PLAYER_OWNER_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How much damage Spinning Peppermint will deal if spawned by Player (such as using Sugar Staff item)
+                    """)
+                .defineInRange("spinningPeppermintPlayerOwnerDamage", 3.0D, 0, 1000000);
+
+        SPINNING_PEPPERMINT_MOB_OWNER_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     How much damage Spinning Peppermint will deal if spawned by a mob (such as Licowitch mob)
+                    """)
+                .defineInRange("spinningPeppermintMobOwnerDamage", 3.0D, 0, 1000000);
+
+        configBuilder.pop();
+
         configBuilder.push("Cloak of Darkness Options");
 
         ALLOWED_CLOAK_OF_DARKNESS_ABILITY_IN_LIGHT = configBuilder
@@ -361,6 +416,18 @@ public class Config {
                      Might help allowing Biome Treat to be eaten when hunger overhaul mods are on.
                     """)
                 .define("CanEatBiomeTreatWhenNotHungry",  false);
+
+        configBuilder.pop();
+
+        configBuilder.push("Ortholance Options");
+
+        ORTHOLANCE_MELEE_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Damage amount for melee attack with Ortholance.
+                    """)
+                .defineInRange("ortholanceMeleeDamage", 5D, 0, 10000);
 
         configBuilder.pop();
 
@@ -453,6 +520,40 @@ public class Config {
                      Damage amount for Gumball projectiles from Shot Gum.
                     """)
                 .defineInRange("shotGumGumballDamage", 4.0D, 0, 1000);
+
+        configBuilder.pop();
+
+        configBuilder.push("Dreadbow Options");
+
+        DREADBOW_DARK_NORMAL_ARROW_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Normal damage amount for Dark Arrow projectiles from Dreadbow.
+                    """)
+                .defineInRange("dreadbowDarkNormalArrowDamage", 3.0D, 0, 1000);
+
+        DREADBOW_DARK_PRECISE_ARROW_DAMAGE = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Precise Volley Enchantment damage amount for Dark Arrow projectiles from Dreadbow.
+                    """)
+                .defineInRange("dreadbowDarkPreciseArrowDamage", 2.0D, 0, 1000);
+
+        DREADBOW_ARROW_RAIN_OVERRIDES = configBuilder
+                .comment("""
+                    ----------------------------------
+                    
+                     Allows setting overrides for how many arrows to spawn with Dreadbow's rain-like attack.
+                     Format is the arrow item registry name. Then an equal sign =. And ends with the arrow amount.
+                     Separate multiple entries with a comma , and whitespace will be ignored.
+                     Example: "alexscaves:seeking_arrow=5, alexscaves:burrowing_arrow=100"
+                    
+                     Otherwise, will default to Alex's Caves original code for determining arrow amount for
+                     the attack which is 30 arrows for dark colored arrows and 5 arrows for all other arrows.
+                    """)
+                .define("dreadbowArrowRainOverrides", "");
 
         configBuilder.pop();
 

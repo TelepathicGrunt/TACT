@@ -5,7 +5,7 @@ Add config to change Water Bolt damage from players and non-player mobs. (Sea St
 
 Add config to change Wave Entity damage from players and non-player mobs. (Ortholance item and Deep One Mage entity)
 
-Add config to change Water Bolt damage from players and non-player mobs. (Sugar Staff item and Licowitch entity)
+Add config to change Spinning Peppermint damage from players and non-player mobs. (Sugar Staff item and Licowitch entity)
 
 #### Items:
 Moved `dreadbowArrowRainOverrides` config option to the `Dreadbow item` section. You may need to re-enter your config entry here after launching game.
